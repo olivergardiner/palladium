@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><?pde version="3.8"?><target includeMode="feature" name="uk.org.whitecottage.palladium">
+	<locations>
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit">
+			<unit id="org.eclipse.equinox.executable.feature.group" version="3.8.300.v20190213-1655"/>
+			<unit id="org.eclipse.equinox.p2.discovery.feature.feature.group" version="1.2.200.v20190129-1112"/>
+			<unit id="org.eclipse.pde.feature.group" version="3.13.400.v20190307-0943"/>
+			<unit id="org.eclipse.platform.feature.group" version="4.11.0.v20190307-0500"/>
+			<unit id="org.eclipse.rcp.feature.group" version="4.11.0.v20190307-0500"/>
+			<repository location="http://download.eclipse.org/eclipse/updates/4.11/R-4.11-201903070500"/>
+		</location>
+	</locations>
+</target>

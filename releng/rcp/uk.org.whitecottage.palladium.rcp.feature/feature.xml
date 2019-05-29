@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="uk.org.whitecottage.palladium.rcp.feature"
+      label="%featureName"
+      version="0.1.0.qualifier"
+      provider-name="%providerName"
+      plugin="uk.org.whitecottage.palladium.rcp"
+      license-feature="org.eclipse.license"
+      license-feature-version="2.0.0">
+
+   <description url="http://www.eclipse.org/papyrus">
+      %description
+   </description>
+
+   <copyright>
+      %copyright
+   </copyright>
+
+   <license url="%licenseURL">
+      %licence
+   </license>
+
+   <url>
+      <discovery label="2018-12" url="http://download.eclipse.org/releases/2018-12/"/>
+      <discovery label="Eclipse Platform 4.10" url="http://download.eclipse.org/eclipse/updates/4.10"/>
+   </url>
+
+   <plugin
+         id="uk.org.whitecottage.palladium.rcp"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"/>
+
+</feature>
