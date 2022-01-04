@@ -1,0 +1,143 @@
+target "Palladium RCP" with requirements source
+
+//location nebula "https://download.eclipse.org/nebula/releases/latest/" {
+location local-nebula "file:/Development/pldm.tools/org.eclipse.swt.nebula-root/releng/org.eclipse.nebula.updatesite/target/repository" {
+	org.eclipse.nebula.widgets.richtext.feature.feature.group
+	org.eclipse.nebula.cwt.feature.feature.group
+}
+
+location local-orbit "file:/Development/pldm.tools/uk.org.whitecottage.orbit/releng/repository/target/repository" {
+	org.freemarker [2.3.28, 3.0.0)
+}
+
+//manualUpdate
+
+location orbit "https://download.eclipse.org/tools/orbit/downloads/drops/R20211122181901/repository" {
+	com.google.guava [21.0.0,28.0.0) // emf.compare still needs guava 21.0.0
+	com.google.guava.source [21.0.0,28.0.0)
+ 	com.google.gson [2.7.0,2.8.0)
+	com.google.gson.source [2.7.0,2.8.0)
+ 	org.apache.commons.lang3 3.1.0
+	org.apache.commons.lang3.source 3.1.0
+ 	org.objectweb.asm [5.0.1, 6.0.0)
+	org.objectweb.asm.source [5.0.1, 6.0.0)
+	// The batik plugins are transitively fetched through GMF_Runtime sdk's org.eclipse.gmf.runtime.thirdparty
+	// see the pom.xml under main/site
+	com.fasterxml.jackson.core.jackson-annotations
+	com.fasterxml.jackson.core.jackson-core
+	com.fasterxml.jackson.core.jackson-databind
+	javax.xml
+	org.apache.commons.io lazy
+	org.apache.commons.io.source lazy
+	org.apache.httpcomponents.httpclient lazy
+	com.google.inject lazy
+	javaewah lazy
+	org.apache.commons.compress lazy
+	org.apache.commons.lang lazy
+	org.kohsuke.args4j lazy
+	org.mockito [2.0.0,3.0.0)
+	org.hamcrest lazy
+	org.hamcrest.library lazy
+	org.hamcrest.integration lazy
+	org.hamcrest.text lazy
+	org.objenesis [1.0.0,2.0.0)
+	org.apache.poi.ooxml
+	org.apache.poi
+	org.apache.poi.ooxml.schemas
+	// Below not in Orbit but can be factored out
+	//org.apache.ws.xmlschema.core
+}
+
+// XWT fix
+location xwt "https://download.eclipse.org/xwt/milestones-1.7.0/1.7.0-S/" {
+    //org.eclipse.xwt.feature.feature.group lazy
+}
+
+
+location "https://download.eclipse.org/modeling/emf/compare/updates/releases/latest/" emfCompare {
+	org.eclipse.emf.compare.source.feature.group lazy
+	org.eclipse.emf.compare.diagram.gmf.source.feature.group lazy
+	org.eclipse.emf.compare.uml2.source.feature.group lazy
+	org.eclipse.emf.compare.egit.source.feature.group lazy
+	org.eclipse.emf.compare.ide.ui.source.feature.group lazy
+	org.eclipse.emf.compare.rcp.ui.source.feature.group lazy
+}
+
+//----------------------------
+
+location releases "http://download.eclipse.org/releases/2021-12/" {
+    org.eclipse.draw2d.feature.group lazy
+    org.eclipse.emf.feature.group lazy
+    org.eclipse.emf.mwe2.language.sdk.feature.group lazy
+    org.eclipse.emf.mwe2.runtime.sdk.feature.group lazy
+    org.eclipse.emf.mwe.core.feature.feature.group lazy
+    org.eclipse.emf.mwe.sdk.feature.group lazy
+    org.eclipse.emf.mwe.ui.feature.feature.group lazy // remove?
+    org.eclipse.emf.validation.ocl.feature.group lazy
+    org.eclipse.equinox.p2.discovery.feature.feature.group lazy
+    org.eclipse.gmf.feature.group lazy
+    org.eclipse.jdt.feature.group lazy
+    org.eclipse.m2m.qvt.oml.feature.group lazy
+    org.eclipse.m2m.qvt.oml.project lazy // no feature
+    org.eclipse.ocl.all.feature.group lazy // no feature group for ocl.ecore alone
+    org.eclipse.ocl.common.ui lazy // no feature group or feature
+    org.eclipse.ocl.core.sdk.feature.group lazy // necessary?
+    org.eclipse.ocl.examples.feature.group lazy
+    org.eclipse.ocl.uml.feature.group lazy
+    org.eclipse.pde.feature.group lazy
+    org.eclipse.platform.feature.group lazy
+    org.eclipse.rcp.feature.group lazy
+	org.eclipse.uml2.sdk.feature.group
+    org.eclipse.uml2.feature.group lazy
+    org.eclipse.wst.common_core.feature.feature.group lazy
+    org.eclipse.wst.xml_core.feature.feature.group lazy
+    org.eclipse.xpand.feature.group lazy
+    org.eclipse.xsd.feature.group lazy
+    org.eclipse.xtend.feature.group lazy
+    org.eclipse.xtend.sdk.feature.group lazy
+    org.eclipse.xtext.runtime.feature.group lazy
+    org.eclipse.xtext.sdk.feature.group lazy
+    org.eclipse.xtext.ui.feature.group lazy
+    org.eclipse.xtext.xbase.feature.group lazy
+    org.eclipse.xtext.xbase.lib.feature.group lazy
+    org.eclipse.xwt.feature.feature.group lazy
+    org.eclipse.egit.feature.group lazy
+	org.eclipse.jgit.feature.group lazy
+	org.eclipse.jgit.http.apache.feature.group lazy
+	org.eclipse.emf.validation.sdk.feature.group lazy
+	org.eclipse.emf.transaction.sdk.feature.group lazy
+	org.eclipse.gef.feature.group lazy
+	org.eclipse.emf.query.sdk.feature.group lazy
+	org.eclipse.emf.sdk.feature.group lazy
+	org.eclipse.xtext.redist.feature.group lazy
+	org.eclipse.wst.xml_ui.feature.feature.group lazy 
+	org.eclipse.gmf.runtime.sdk.feature.group lazy
+	org.eclipse.gmf.runtime.notation.sdk.feature.group lazy
+	org.eclipse.m2m.qvt.oml.sdk.feature.group lazy
+	org.eclipse.xpand.sdk.feature.group lazy
+	org.eclipse.emf.cdo.epp.feature.group lazy
+}
+
+location eclipse "https://download.eclipse.org/eclipse/updates/4.22/" {
+	org.eclipse.sdk.feature.group lazy
+	org.eclipse.e4.core.tools.feature.feature.group lazy
+	org.eclipse.rcp.configuration.feature.group lazy
+	org.eclipse.equinox.executable.feature.group lazy
+}
+
+location papyrus "https://download.eclipse.org/modeling/mdt/papyrus/updates/releases/2021-12/" {	
+    org.eclipse.papyrus.sdk.feature.feature.group lazy
+    org.eclipse.papyrus.views.properties.model.xwt lazy
+    org.eclipse.papyrus.toolsmiths.feature.feature.group lazy
+}
+
+//location mylyn "https://download.eclipse.org/mylyn/drops/3.24.2/v20180905-2014" {
+location mylyn "https://download.eclipse.org/mylyn/releases/3.25/" {
+	org.eclipse.mylyn.ide_feature.feature.group lazy
+	org.eclipse.mylyn.java_feature.feature.group lazy
+	org.eclipse.mylyn.pde_feature.feature.group lazy
+	org.eclipse.mylyn.bugzilla_feature.feature.group lazy
+	org.eclipse.mylyn.context_feature.feature.group lazy
+	org.eclipse.mylyn_feature.feature.group lazy
+}
+

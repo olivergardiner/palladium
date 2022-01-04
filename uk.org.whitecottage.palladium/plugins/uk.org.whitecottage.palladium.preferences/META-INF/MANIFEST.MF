@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Palladium Preferences
+Bundle-SymbolicName: uk.org.whitecottage.palladium.preferences;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: uk.org.whitecottage.palladium.preferences.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Automatic-Module-Name: uk.org.whitecottage.palladium.preferences
+Bundle-ActivationPolicy: lazy

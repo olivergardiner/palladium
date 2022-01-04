@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ASCII"?>
+<fragment:ModelFragments xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:commands="http://www.eclipse.org/ui/2010/UIModel/application/commands" xmlns:fragment="http://www.eclipse.org/ui/2010/UIModel/fragment" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmi:id="_4h0v8CP3EeuTkLK5AAYUhw">
+  <imports xsi:type="menu:Menu" xmi:id="_FdUEECP6EeuTkLK5AAYUhw" elementId="uk.org.whitecottage.palladium.menu.palladium"/>
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_oAI0YCP5EeuTkLK5AAYUhw" featurename="commands" parentElementId="xpath:/">
+    <elements xsi:type="commands:Command" xmi:id="_0n4_ECP5EeuTkLK5AAYUhw" elementId="uk.org.whitecottage.palladium.export.command.export" commandName="Export Catalogue" description="Exports the data catalogue in various formats"/>
+  </fragments>
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_ulSjcCP5EeuTkLK5AAYUhw" featurename="handlers" parentElementId="xpath:/">
+    <elements xsi:type="commands:Handler" xmi:id="_1LO8sCP5EeuTkLK5AAYUhw" elementId="uk.org.whitecottage.palladium.export.handler.export" contributionURI="bundleclass://uk.org.whitecottage.palladium.export/uk.org.whitecottage.palladium.export.ExportHandler" command="_0n4_ECP5EeuTkLK5AAYUhw"/>
+  </fragments>
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_MxZ8wCP6EeuTkLK5AAYUhw" featurename="menuContributions" parentElementId="xpath:/">
+    <elements xsi:type="menu:MenuContribution" xmi:id="_Q6eD4CP6EeuTkLK5AAYUhw" elementId="uk.org.whitecottage.palladium.export.menucontribution.palladium" parentId="uk.org.whitecottage.palladium.menu.palladium">
+      <children xsi:type="menu:HandledMenuItem" xmi:id="_pSglwCP6EeuTkLK5AAYUhw" elementId="uk.org.whitecottage.palladium.export.handledmenuitem.export" label="Export Catalogue..." command="_0n4_ECP5EeuTkLK5AAYUhw"/>
+    </elements>
+  </fragments>
+</fragment:ModelFragments>

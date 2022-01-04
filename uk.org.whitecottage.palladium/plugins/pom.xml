@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>uk.org.whitecottage.palladium</groupId>
+		<artifactId>releng</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+		<relativePath>../releng</relativePath>
+	</parent>
+
+	<artifactId>plugins</artifactId>
+	<packaging>pom</packaging>
+
+	<name>Palladium Main Plugins</name>
+	<description>Container of the Eclipse Plugin definition projects for the main Palladium distribution.</description>
+
+	<modules>
+		<module>uk.org.whitecottage.palladium.core</module>
+		<module>uk.org.whitecottage.palladium.builder</module>
+		<module>uk.org.whitecottage.palladium.util</module>
+		<module>uk.org.whitecottage.palladium.validation</module>
+		<module>uk.org.whitecottage.palladium.catalogue</module>
+		<module>uk.org.whitecottage.palladium.datavault</module>
+		<module>uk.org.whitecottage.palladium.xmi</module>
+		<module>uk.org.whitecottage.palladium.helper</module>
+		<module>uk.org.whitecottage.palladium.export</module>
+		<module>uk.org.whitecottage.palladium.theme</module>
+		<module>uk.org.whitecottage.palladium.help</module>
+		<module>uk.org.whitecottage.palladium.preferences</module>
+		<module>uk.org.whitecottage.palladium.perspective</module>
+		<module>uk.org.whitecottage.swagger</module>
+		
+		<!-- Papyrus Compare currently - updated dependencies for compatibility with 5.0.0 -->
+		<!-- <module>org.eclipse.papyrus.compare.diagram</module>
+		<module>org.eclipse.papyrus.compare.diagram.ide.ui</module>
+		<module>org.eclipse.papyrus.compare.uml2</module>
+		<module>org.eclipse.papyrus.compare.uml2.edit</module>
+		<module>org.eclipse.papyrus.compare.egit.ui</module> -->
+	</modules>
+	
+</project>

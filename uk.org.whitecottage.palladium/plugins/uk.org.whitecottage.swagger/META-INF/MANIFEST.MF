@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Swagger
+Bundle-SymbolicName: uk.org.whitecottage.swagger
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: uk.org.whitecottage.swagger.Activator
+Require-Bundle: org.eclipse.core.runtime,
+ com.fasterxml.jackson.core.jackson-annotations;bundle-version="2.10.3",
+ com.fasterxml.jackson.core.jackson-core;bundle-version="2.10.3",
+ com.fasterxml.jackson.core.jackson-databind;bundle-version="2.10.3"
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Automatic-Module-Name: uk.org.whitecottage.swagger
+Bundle-ActivationPolicy: lazy

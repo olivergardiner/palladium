@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.papyrus.infra.gmfdiag.css.theme">
+      <themeDefinition
+            icon="icons/papyrus.png"
+            id="uk.org.whitecottage.palladium.theme"
+            label="Palladium">
+      </themeDefinition>
+      <themeContribution
+            id="uk.org.whitecottage.palladium.theme">
+         <stylesheet
+               stylesheetPath="resources/style/palladium.css">
+         </stylesheet>
+      </themeContribution>
+   </extension>
+
+</plugin>

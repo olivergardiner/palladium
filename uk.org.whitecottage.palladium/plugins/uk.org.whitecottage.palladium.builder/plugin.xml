@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         id="ldmlBuilder"
+         name="LDML Project Builder"
+         point="org.eclipse.core.resources.builders">
+      <builder
+            hasNature="true">
+         <run
+               class="uk.org.whitecottage.palladium.builder.LDMLBuilder">
+         </run>
+      </builder>
+   </extension>
+   <extension
+         id="ldmlNature"
+         name="LDML Project Nature"
+         point="org.eclipse.core.resources.natures">
+      <runtime>
+         <run
+               class="uk.org.whitecottage.palladium.builder.LDMLNature">
+         </run>
+      </runtime>
+      <builder
+            id="uk.org.whitecottage.palladium.builder.ldmlBuilder">
+      </builder>
+   </extension>
+   <extension
+         id="ldmlProblem"
+         name="LDML Problem"
+         point="org.eclipse.core.resources.markers">
+      <super
+            type="org.eclipse.core.resources.problemmarker">
+      </super>
+      <persistent
+            value="true">
+      </persistent>
+   </extension>
+
+</plugin>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="ASCII"?>
+<fragment:ModelFragments xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:commands="http://www.eclipse.org/ui/2010/UIModel/application/commands" xmlns:fragment="http://www.eclipse.org/ui/2010/UIModel/fragment" xmi:id="_9aP3cCP3EeuTkLK5AAYUhw">
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_cyyq0CP8EeuTkLK5AAYUhw" featurename="commands" parentElementId="xpath:/">
+    <elements xsi:type="commands:Command" xmi:id="_h8CckCP8EeuTkLK5AAYUhw" elementId="uk.org.whitecottage.palladium.xmi.command.import" commandName="ImportXMI" description="Imports XMI from various sources in a tolerant manner"/>
+  </fragments>
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_e4iPUCP8EeuTkLK5AAYUhw" featurename="handlers" parentElementId="xpath:/">
+    <elements xsi:type="commands:Handler" xmi:id="_mvPF0CP8EeuTkLK5AAYUhw" elementId="uk.org.whitecottage.palladium.xmi.handler.import" contributionURI="bundleclass://uk.org.whitecottage.palladium.xmi/uk.org.whitecottage.palladium.xmi.ImportXMIHandler" command="_h8CckCP8EeuTkLK5AAYUhw"/>
+  </fragments>
+</fragment:ModelFragments>

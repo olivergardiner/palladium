@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ASCII"?>
+<fragment:ModelFragments xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:commands="http://www.eclipse.org/ui/2010/UIModel/application/commands" xmlns:fragment="http://www.eclipse.org/ui/2010/UIModel/fragment" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmi:id="_mmOA4CNFEeuTkLK5AAYUhw">
+  <imports xsi:type="menu:Menu" xmi:id="_TpHWUCNIEeuTkLK5AAYUhw" elementId="uk.org.whitecottage.palladium.menu.palladium"/>
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_BzD6wCNIEeuTkLK5AAYUhw" featurename="commands" parentElementId="xpath:/">
+    <elements xsi:type="commands:Command" xmi:id="_ZtukICNIEeuTkLK5AAYUhw" elementId="uk.org.whitecottage.palladium.catalogue.command.catalogue" commandName="Catalogue" description="Generates documentation for the model"/>
+  </fragments>
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_FQpb8CNIEeuTkLK5AAYUhw" featurename="handlers" parentElementId="xpath:/">
+    <elements xsi:type="commands:Handler" xmi:id="_mUzZYCNIEeuTkLK5AAYUhw" elementId="uk.org.whitecottage.palladium.catalogue.handler.catalogue" contributionURI="bundleclass://uk.org.whitecottage.palladium.catalogue/uk.org.whitecottage.palladium.catalogue.DocumentationHandler" command="_ZtukICNIEeuTkLK5AAYUhw"/>
+  </fragments>
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_G0FkoCNIEeuTkLK5AAYUhw" featurename="menuContributions" parentElementId="xpath:/">
+    <elements xsi:type="menu:MenuContribution" xmi:id="_Q8tacCNIEeuTkLK5AAYUhw" elementId="uk.org.whitecottage.palladium.catalogue.menucontribution.catalogue" parentId="uk.org.whitecottage.palladium.menu.palladium">
+      <children xsi:type="menu:HandledMenuItem" xmi:id="_wXi0MCNJEeuTkLK5AAYUhw" elementId="uk.org.whitecottage.palladium.catalogue.handledmenuitem.catalogue" label="Generate Documentation..." command="_ZtukICNIEeuTkLK5AAYUhw"/>
+    </elements>
+  </fragments>
+</fragment:ModelFragments>

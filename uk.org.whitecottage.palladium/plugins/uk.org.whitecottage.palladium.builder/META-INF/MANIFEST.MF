@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Builder
+Bundle-SymbolicName: uk.org.whitecottage.palladium.builder;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: uk.org.whitecottage.palladium.builder.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.core.resources,
+ org.eclipse.uml2.uml.resources;bundle-version="5.5.0",
+ uk.org.whitecottage.palladium.core,
+ uk.org.whitecottage.palladium.util
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Automatic-Module-Name: uk.org.whitecottage.builder
+Bundle-ActivationPolicy: lazy
+Export-Package: uk.org.whitecottage.palladium.builder

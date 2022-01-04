@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ASCII"?>
+<fragment:ModelFragments xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:commands="http://www.eclipse.org/ui/2010/UIModel/application/commands" xmlns:fragment="http://www.eclipse.org/ui/2010/UIModel/fragment" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmi:id="_JECxYBq-Eeu2CfuB9zuFQA">
+  <imports xsi:type="menu:Menu" xmi:id="_JVnBgBrJEeu2CfuB9zuFQA" elementId="uk.org.whitecottage.palladium.menu.palladium"/>
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_UC5roBq-Eeu2CfuB9zuFQA" featurename="commands" parentElementId="xpath:/">
+    <elements xsi:type="commands:Command" xmi:id="_aJwVIBq-Eeu2CfuB9zuFQA" elementId="uk.org.whitecottage.palladium.datavault.command.datavault" commandName="DataVault" description="Exports a DDL for a DataVault derived from the model"/>
+  </fragments>
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_duTZ8Bq-Eeu2CfuB9zuFQA" featurename="handlers" parentElementId="xpath:/">
+    <elements xsi:type="commands:Handler" xmi:id="_jro7EBq-Eeu2CfuB9zuFQA" elementId="uk.org.whitecottage.palladium.datavault.handler.datavault" contributionURI="bundleclass://uk.org.whitecottage.palladium.datavault/uk.org.whitecottage.palladium.datavault.DataVaultHandler" command="_aJwVIBq-Eeu2CfuB9zuFQA"/>
+  </fragments>
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_5pa1cBrIEeu2CfuB9zuFQA" featurename="menuContributions" parentElementId="xpath:/">
+    <elements xsi:type="menu:MenuContribution" xmi:id="_9CS1wBrIEeu2CfuB9zuFQA" elementId="uk.org.whitecottage.palladium.datavault.menucontribution.palladium" parentId="uk.org.whitecottage.palladium.menu.palladium">
+      <children xsi:type="menu:HandledMenuItem" xmi:id="_ZO4K0BrKEeu2CfuB9zuFQA" elementId="uk.org.whitecottage.palladium.datavault.handledmenuitem.datavault" label="Generate Datavault DDL..." command="_aJwVIBq-Eeu2CfuB9zuFQA"/>
+    </elements>
+  </fragments>
+</fragment:ModelFragments>

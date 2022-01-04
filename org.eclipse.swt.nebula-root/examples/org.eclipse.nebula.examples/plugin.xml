@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+   <extension-point id="examples" name="%extension-point.name" schema="schema/examples.exsd"/>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            category="org.eclipse.nebula.examples.nebula"
+            class="org.eclipse.nebula.examples.ExamplesView"
+            icon="icons/16px.png"
+            id="org.eclipse.nebula.examples.view"
+            name="%view.name"/>
+      <category
+            id="org.eclipse.nebula.examples.nebula"
+            name="%category.name" 
+            >
+      </category>
+   </extension>
+
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            class="org.eclipse.nebula.examples.internal.ExamplesPerspective"
+            fixed="true"
+            icon="icons/16px.png"
+            id="org.eclipse.nebula.examples.perspective"
+            name="%perspective.name">
+      </perspective>
+   </extension>
+   <extension
+         id="application"
+         point="org.eclipse.core.runtime.applications">
+      <application
+            cardinality="singleton-global"
+            icon="icons/eclipse.png"
+            thread="main"
+            visible="true">
+         <run
+               class="org.eclipse.nebula.examples.internal.ExamplesApplication">
+         </run>
+      </application>
+   </extension>
+   <extension
+         id="nebula_examples"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="org.eclipse.nebula.examples.application"
+            name="%product.name">
+         <property
+               name="appName"
+               value="Nebula Examples">
+         </property>
+      </product>
+   </extension>
+
+</plugin>

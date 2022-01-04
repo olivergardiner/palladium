@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ElementCreationMenuModel:Folder xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ElementCreationMenuModel="http://www.eclipse.org/papyrus/infra/newchild/elementcreationmenumodel" xmlns:elementtypesconfigurations="http://www.eclipse.org/papyrus/infra/elementtypesconfigurations/1.2" xmi:id="_-5Z5sN90EeOzMY8AIRUeqQ" label="New Relationship (Palladium)">
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_RzWnQBZUEeSzr5rzfsl7Yg" label="Association" displayAllRoles="false">
+    <elementType xsi:type="elementtypesconfigurations:SpecializationTypeConfiguration" href="../../../../plugin/org.eclipse.papyrus.uml.service.types/model/uml.elementtypesconfigurations#org.eclipse.papyrus.uml.Association"/>
+  </menu>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" label="AssociationClass" displayAllRoles="false">
+    <elementType xsi:type="elementtypesconfigurations:MetamodelTypeConfiguration" href="../../../../plugin/org.eclipse.papyrus.uml.service.types/model/uml.elementtypesconfigurations#org.eclipse.papyrus.uml.AssociationClassBase"/>
+  </menu>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_RD-_0BZUEeSzr5rzfsl7Yg" label="Dependency" displayAllRoles="false">
+    <elementType xsi:type="elementtypesconfigurations:MetamodelTypeConfiguration" href="../../../../plugin/org.eclipse.papyrus.uml.service.types/model/uml.elementtypesconfigurations#org.eclipse.papyrus.uml.Dependency"/>
+  </menu>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_RD-_0RZUEeSzr5rzfsl7Yg" label="Generalization" displayAllRoles="false">
+    <elementType xsi:type="elementtypesconfigurations:MetamodelTypeConfiguration" href="../../../../plugin/org.eclipse.papyrus.uml.service.types/model/uml.elementtypesconfigurations#org.eclipse.papyrus.uml.Generalization"/>
+  </menu>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" label="GeneralizationSet" displayAllRoles="false">
+    <elementType xsi:type="elementtypesconfigurations:MetamodelTypeConfiguration" href="../../../../plugin/org.eclipse.papyrus.uml.service.types/model/uml.elementtypesconfigurations#org.eclipse.papyrus.uml.GeneralizationSet"/>
+  </menu>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" label="Realization" displayAllRoles="false">
+    <elementType xsi:type="elementtypesconfigurations:MetamodelTypeConfiguration" href="../../../../plugin/org.eclipse.papyrus.uml.service.types/model/uml.elementtypesconfigurations#org.eclipse.papyrus.uml.Realization"/>
+  </menu>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" label="InterfaceRealization" displayAllRoles="false">
+    <elementType xsi:type="elementtypesconfigurations:MetamodelTypeConfiguration" href="../../../../plugin/org.eclipse.papyrus.uml.service.types/model/uml.elementtypesconfigurations#org.eclipse.papyrus.uml.InterfaceRealization"/>
+  </menu>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" label="Abstraction" displayAllRoles="false">
+    <elementType xsi:type="elementtypesconfigurations:MetamodelTypeConfiguration" href="../../../../plugin/org.eclipse.papyrus.uml.service.types/model/uml.elementtypesconfigurations#org.eclipse.papyrus.uml.Abstraction"/>
+  </menu>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" label="Usage" displayAllRoles="false">
+    <elementType xsi:type="elementtypesconfigurations:MetamodelTypeConfiguration" href="../../../../plugin/org.eclipse.papyrus.uml.service.types/model/uml.elementtypesconfigurations#org.eclipse.papyrus.uml.Usage"/>
+  </menu>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" label="PackageImport" displayAllRoles="false">
+    <elementType xsi:type="elementtypesconfigurations:SpecializationTypeConfiguration" href="../../../../plugin/org.eclipse.papyrus.uml.service.types/model/uml.elementtypesconfigurations#org.eclipse.papyrus.uml.PackageImport"/>
+  </menu>
+</ElementCreationMenuModel:Folder>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.emf.validation.constraintProviders">
+      <category
+            id="uk.org.whitecottage.palladium.validation.category.ldml"
+            name="LDML">
+      </category>
+      <constraintProvider
+            cache="true">
+         <package
+               namespaceUri="http://www.eclipse.org/uml2/5.0.0/UML">
+         </package>
+         <constraints
+               categories="uk.org.whitecottage.palladium.validation.category.ldml">
+            <constraint
+                  class="uk.org.whitecottage.palladium.validation.NoSpacesConstraint"
+                  id="constraint.no.spaces"
+                  isEnabledByDefault="true"
+                  lang="Java"
+                  mode="Live"
+                  name="No spaces in Element names"
+                  severity="ERROR"
+                  statusCode="1">
+               <message>
+                  The element {0} has spaces in its name
+               </message>
+            </constraint>
+            <constraint
+                  class="uk.org.whitecottage.palladium.validation.PropertiesHaveTypesConstraint"
+                  id="constraint.typed.properties"
+                  isEnabledByDefault="true"
+                  lang="Java"
+                  mode="Batch"
+                  name="Properties have defined Types"
+                  severity="WARNING"
+                  statusCode="2">
+               <message>
+                  The Type of the Properties {0} in element {1} are not defined
+               </message>
+            </constraint>
+            <constraint
+                  class="uk.org.whitecottage.palladium.validation.UniqueNamesConstraint"
+                  id="coonstraint.namespace.unique.names"
+                  isEnabledByDefault="true"
+                  lang="Java"
+                  mode="Batch"
+                  name="Names are unique within their namespace"
+                  severity="ERROR"
+                  statusCode="3">
+               <message>
+                  The element {0} is not named uniquely within its declaring namespace
+               </message>
+            </constraint>
+         </constraints>
+      </constraintProvider>
+   </extension>
+   <extension
+         point="org.eclipse.emf.validation.constraintBindings">
+      <clientContext
+            id="NamedElementContext">
+         <selector
+               class="uk.org.whitecottage.palladium.validation.TrueSelector">
+         </selector>
+      </clientContext>
+      <binding
+            context="NamedElementContext">
+         <constraint
+               ref="uk.org.whitecottage.palladium.validation.constraint.no.spaces">
+         </constraint>
+         <constraint
+               ref="uk.org.whitecottage.palladium.validation.constraint.namespace.unique.names">
+         </constraint>
+      </binding>
+      <clientContext
+            id="PropertyContext">
+         <selector
+               class="uk.org.whitecottage.palladium.validation.TrueSelector">
+         </selector>
+      </clientContext>
+      <binding
+            context="PropertyContext">
+         <constraint
+               ref="uk.org.whitecottage.palladium.validation.constraint.typed.properties">
+         </constraint>
+      </binding>
+   </extension>
+
+</plugin>

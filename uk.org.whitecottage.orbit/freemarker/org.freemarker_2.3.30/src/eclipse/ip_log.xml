@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ip_log version="1.0">
+  <project id="org.freemarker" version="2.3.28" status="done">
+    <info>
+      <name>FreeMarker</name>
+      <repository>scm:git:git.eclipse.org:/gitroot/orbit/recipes.git</repository>
+      <location>freemarker/org.freemarker</location>
+    </info>
+    <contact>
+      <name>Doug Schaefer</name>
+      <email>cdtdoug@gmail.com</email>
+    </contact>
+    <legal>
+      <ipzilla bug_id="10180"/>
+      <license>
+        <name>Apache License, 2.0</name>
+        <reference>http://www.apache.org/licenses/LICENSE-2.0.txt</reference>
+      </license>
+      <package>freemarker-2.3.28.jar</package>
+    </legal>
+  </project>
+</ip_log>

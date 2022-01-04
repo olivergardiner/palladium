@@ -1,0 +1,49 @@
+/****************************************************************************
+ * Copyright (c) 2014 the original authors
+ *
+ * This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License 2.0
+ * which accompanies this distribution, and is available at
+ * https://www.eclipse.org/legal/epl-2.0/
+ * 
+ * SPDX-License-Identifier: EPL-2.0
+ *
+ * Contributors:
+ *    Baruch Youssin
+ *****************************************************************************/
+package org.eclipse.nebula.widgets.cdatetime;
+
+import org.eclipse.nebula.cwt.test.AbstractVTestCase;
+
+/**
+ * This test fails on Ubuntu 12.04: successFocus = true but hasIndeedFocus = false.
+ * Reported as bug 429495.
+ */
+public class TestFocusCDateTime extends AbstractVTestCase {
+
+	private CdtTester tester;
+
+	/**
+	 * @throws java.lang.Exception
+	 */
+	@Override
+	protected void setUp() throws Exception {
+		super.setUp();
+		tester = new CdtTester(getShell(), CDT.DATE_MEDIUM | CDT.TIME_MEDIUM);
+	}
+
+	/**
+	 * @throws java.lang.Exception
+	 */
+	@Override
+	protected void tearDown() throws Exception {
+		super.tearDown();
+	}
+
+	public void testFocusCDateTime(){
+		Boolean successFocus = tester.setFocus();
+		Boolean hasIndeedFocus = hasFocus(tester.getCDateTime().getTextWidget());
+		assertTrue(successFocus);
+		assertTrue(hasIndeedFocus);
+	}
+}

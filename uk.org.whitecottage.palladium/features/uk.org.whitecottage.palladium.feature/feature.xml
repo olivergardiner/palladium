@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="uk.org.whitecottage.palladium.feature"
+      label="Palladium"
+      version="2.0.9.qualifier">
+
+   <description url="http://www.example.com/description">
+      [Enter Feature Description here.]
+   </description>
+
+   <copyright url="http://www.example.com/copyright">
+      [Enter Copyright Description here.]
+   </copyright>
+
+   <license url="http://www.example.com/license">
+      [Enter License Description here.]
+   </license>
+
+   <requires>
+      <import plugin="org.eclipse.e4.ui.services"/>
+      <import plugin="org.eclipse.e4.core.di.annotations"/>
+      <import plugin="org.eclipse.uml2.uml.resources" version="5.4.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.gmf.runtime.diagram.ui.render" version="1.7.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.papyrus.editor" version="2.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.papyrus.emf.facet.common.sdk.core" version="1.2.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.papyrus.emf.facet.common.ui" version="1.2.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.papyrus.emf.facet.custom.metamodel.editor" version="1.3.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.papyrus.emf.facet.custom.sdk.core" version="1.2.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.papyrus.emf.facet.efacet.ui" version="3.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.papyrus.emf.facet.query.java" version="1.2.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.papyrus.emf.facet.query.java.metamodel" version="1.3.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.papyrus.emf.facet.query.ocl.metamodel" version="1.2.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.papyrus.emf.facet.query.ocl.sdk.ui" version="2.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.papyrus.emf.facet.util.jface.ui" version="2.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.papyrus.emf.facet.util.pde.core" version="1.2.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.papyrus.emf.facet.widgets.celleditors.ecore" version="1.2.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.papyrus.extensionpoints.editors" version="3.1.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.papyrus.infra.architecture.representation.edit" version="1.1.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.papyrus.infra.constraints.editor" version="2.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.papyrus.infra.constraints.ui" version="2.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.papyrus.infra.editor.welcome" version="2.0.100" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.papyrus.infra.editor.welcome.internationalization" version="2.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.papyrus.infra.editor.welcome.nattable" version="3.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.papyrus.infra.emf.diagram.common" version="2.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.papyrus.infra.emf.readonly" version="3.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.papyrus.infra.emf.types" version="4.1.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.papyrus.infra.emf.types.ui" version="4.1.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.papyrus.infra.gmfdiag.assistant.editor" version="1.3.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.papyrus.infra.gmfdiag.css.configuration" version="2.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.papyrus.infra.gmfdiag.css.properties" version="3.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.papyrus.infra.gmfdiag.css3.xtext.ui" version="3.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.papyrus.infra.gmfdiag.expansion" version="3.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.papyrus.infra.gmfdiag.hyperlink" version="3.0.100" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.papyrus.infra.gmfdiag.paletteconfiguration" version="4.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.papyrus.infra.gmfdiag.paletteconfiguration.edit" version="4.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.papyrus.infra.gmfdiag.properties" version="4.0.100" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.papyrus.infra.gmfdiag.representation" version="2.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.papyrus.infra.gmfdiag.style" version="2.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.papyrus.infra.gmfdiag.style.edit" version="2.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.papyrus.infra.internationalization.controlmode" version="1.0.100" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.papyrus.infra.internationalization.edit" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.papyrus.infra.internationalization.utils" version="1.0.100" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.papyrus.infra.nattable.common" version="5.1.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.papyrus.infra.nattable.controlmode" version="2.0.100" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.papyrus.infra.nattable.model.editor" version="5.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.papyrus.infra.nattable.modelexplorer" version="4.0.100" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.papyrus.infra.nattable.properties" version="2.3.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.papyrus.infra.nattable.views.config" version="5.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.papyrus.infra.newchild" version="4.1.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.papyrus.infra.newchild.edit" version="4.1.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.papyrus.infra.newchild.editor" version="3.1.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.papyrus.infra.onefile" version="2.2.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.papyrus.infra.onefile.ui" version="1.2.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.papyrus.infra.properties.editor" version="3.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.papyrus.infra.services.localizer" version="2.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.papyrus.infra.services.resourceloading" version="3.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.papyrus.infra.services.semantic" version="2.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.papyrus.infra.services.validation" version="3.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.papyrus.infra.types.editor" version="3.1.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.papyrus.infra.types.rulebased" version="4.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.papyrus.infra.types.ui" version="3.0.100" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.papyrus.infra.viewpoints.policy" version="3.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.papyrus.uml.alf.ui" version="3.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.papyrus.uml.appearance" version="2.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.papyrus.uml.decoratormodel.controlmode" version="1.2.200" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.papyrus.uml.decoratormodel.properties" version="4.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.papyrus.uml.decoratormodel.ui" version="2.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.papyrus.uml.diagram.clazz" version="3.1.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.papyrus.uml.diagram.common.groups" version="2.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.papyrus.uml.diagram.communication" version="4.0.100" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.papyrus.uml.diagram.component" version="3.2.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.papyrus.uml.diagram.composite" version="3.1.100" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.papyrus.uml.diagram.css" version="2.0.100" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.papyrus.uml.diagram.deployment" version="3.2.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.papyrus.uml.diagram.interactionoverview" version="3.0.100" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.papyrus.uml.diagram.menu" version="2.0.100" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.papyrus.uml.diagram.navigation" version="2.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.papyrus.uml.diagram.profile" version="3.1.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.papyrus.uml.diagram.sequence" version="5.1.100" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.papyrus.uml.diagram.statemachine" version="3.1.100" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.papyrus.uml.diagram.usecase" version="4.0.200" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.papyrus.uml.documentation.profile" version="1.3.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.papyrus.uml.filters.edit" version="1.3.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.papyrus.uml.internationalization" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.papyrus.uml.internationalization.edit" version="1.100.100" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.papyrus.uml.internationalization.utils" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.papyrus.uml.m2m.qvto.common" version="1.0.100" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.papyrus.uml.m2m.qvto.common.blackboxes" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.papyrus.uml.nattable.clazz.config" version="5.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.papyrus.uml.nattable.xtext.valuespecification" version="5.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.papyrus.uml.search.ui" version="2.0.100" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.papyrus.uml.service.types" version="4.1.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.papyrus.uml.service.validation" version="2.1.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.papyrus.uml.templaterepository" version="2.0.100" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.papyrus.uml.textedit.collaborationuse.xtext.ui" version="2.1.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.papyrus.uml.textedit.connectionpointreference.xtext.ui" version="2.1.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.papyrus.uml.textedit.javaconstraint" version="2.0.100" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.papyrus.uml.textedit.message.xtext.ui" version="2.1.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.papyrus.uml.textedit.parameter.xtext.ui" version="2.1.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.papyrus.uml.textedit.port.xtext.ui" version="2.1.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.papyrus.uml.textedit.property.xtext.ui" version="2.1.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.papyrus.uml.textedit.state.xtext.ui" version="2.1.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.papyrus.uml.textedit.stereotypeproperty.xtext.ui" version="3.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.papyrus.uml.textedit.transition.xtext.ui" version="2.1.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.papyrus.uml.textedit.valuespecification.xtext.ui" version="2.1.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.papyrus.uml.textedit.valuespecification.xtext.utils" version="1.4.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.papyrus.uml.types.core" version="4.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.papyrus.uml.ui" version="1.3.100" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.papyrus.views.modelexplorer" version="3.0.100" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.papyrus.views.properties" version="4.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.e4.core.services" version="2.1.400" match="greaterOrEqual"/>
+      <import plugin="org.apache.commons.io" version="2.6.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.e4.core.di"/>
+      <import plugin="org.eclipse.papyrus.infra.architecture"/>
+      <import plugin="javax.inject"/>
+      <import plugin="org.eclipse.core.resources"/>
+   </requires>
+
+   <plugin
+         id="uk.org.whitecottage.palladium.core"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="uk.org.whitecottage.palladium.help"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="uk.org.whitecottage.palladium.preferences"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="uk.org.whitecottage.palladium.perspective"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="uk.org.whitecottage.palladium.theme"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="uk.org.whitecottage.palladium.catalogue"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="uk.org.whitecottage.palladium.datavault"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="uk.org.whitecottage.palladium.export"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="uk.org.whitecottage.palladium.helper"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="uk.org.whitecottage.palladium.xmi"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="uk.org.whitecottage.palladium.validation"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="uk.org.whitecottage.palladium.builder"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="uk.org.whitecottage.palladium.util"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+</feature>

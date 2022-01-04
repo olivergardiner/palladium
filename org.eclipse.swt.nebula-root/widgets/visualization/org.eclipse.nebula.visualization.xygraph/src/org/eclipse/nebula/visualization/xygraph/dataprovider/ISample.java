@@ -1,0 +1,55 @@
+/*******************************************************************************
+ * Copyright (c) 2010 Oak Ridge National Laboratory.
+ *
+ * This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License 2.0
+ * which accompanies this distribution, and is available at
+ * https://www.eclipse.org/legal/epl-2.0/
+ * 
+ * SPDX-License-Identifier: EPL-2.0
+ ******************************************************************************/
+package org.eclipse.nebula.visualization.xygraph.dataprovider;
+
+/**
+ * A sample interface which could return the data for a point on XY-Graph.
+ * 
+ * @author Xihui Chen
+ *
+ */
+public interface ISample {
+
+	/**
+	 * @return the value on X axis. For a 'date' axis, this has to be
+	 *         milliseconds as used by java.util.Date
+	 */
+	public double getXValue();
+
+	/**
+	 * @return the value on Y axis
+	 */
+	public double getYValue();
+
+	/**
+	 * @return The plus error on X value
+	 */
+	public double getXPlusError();
+
+	/**
+	 * @return The plus error on Y value
+	 */
+	public double getYPlusError();
+
+	/**
+	 * @return The minus error on X value
+	 */
+	public double getXMinusError();
+
+	/**
+	 * @return The minus error on Y value
+	 */
+	public double getYMinusError();
+
+	/** @return Any informational string that might work as e.g. a Tooltip. */
+	public String getInfo();
+
+}

@@ -1,0 +1,570 @@
+<project
+  xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+>
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>org.eclipse.orbit.bundles</groupId>
+  <artifactId>orbit-bundles-parent</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
+
+  <name>Eclipse Orbit :: Maven Parent</name>
+  <description>Maven parent for Orbit recipes.</description>
+
+  <properties>
+
+    <!-- include everything from all dependencies by default -->
+    <recipe.includes>**/*</recipe.includes>
+
+    <!-- but filter out maven instructions, we'll generate new ones below -->
+    <recipe.excludes>META-INF/maven/**/*.*</recipe.excludes>
+
+    <!-- BND specific instructions which can be overridden by recipe -->
+    <recipe.Bundle-Name>%bundleName</recipe.Bundle-Name>
+    <recipe.Bundle-Description />
+    <recipe.Bundle-Vendor>%bundleVendor</recipe.Bundle-Vendor>
+
+    <!-- remove some clutter from the generated manifests -->
+    <recipe.removeheaders>Ignore-Package,Include-Resource,Private-Package,Embed-Dependency,Built-By,Build-Jdk,Bnd-*,Tool</recipe.removeheaders>
+
+    <!-- for Orbit, by default we'll also remove the Require-Bundle header; recipe poms may override if they need this header -->
+    <recipe.removeadditionalheaders>Require-Bundle</recipe.removeadditionalheaders>
+
+    <!-- read BND settings from 'osgi.bnd' located next to pom.xml -->
+    <recipe.bndfile>osgi.bnd</recipe.bndfile>
+
+    <!-- pattern/format used for the qualifier -->
+    <recipe.qualifier.format>'v'yyyyMMdd-HHmm</recipe.qualifier.format>
+
+    <!-- set to false if you want to have dependencies embedded as full jars inside the bundle -->
+    <recipe.unpackdependencies>true</recipe.unpackdependencies>
+
+    <!-- when recipe.unpackdependencies is set to false, this one can be set to true to force removal of the version string
+      from dependency jar names -->
+    <recipe.stripversion>false</recipe.stripversion>
+
+    <!-- when recipe.unpackdependencies is set to false, this one can be set to true to disable inclusion of '.' folder into
+      the Bundle-ClassPath header -->
+    <recipe.excludedotfolder>false</recipe.excludedotfolder>
+
+    <!-- project defaults -->
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+    <!-- versions used for plug-ins below -->
+    <tycho-version>1.7.0</tycho-version>
+    <maven-resources-version>3.2.0</maven-resources-version>
+    <maven-dependency-version>3.2.0</maven-dependency-version>
+
+    <!-- versions of the EBR plug-in to use -->
+    <ebr-version>1.3.0-SNAPSHOT</ebr-version>
+
+    <!-- force update of Eclipse IP info on every execution -->
+    <forceIpFilesUpdate>false</forceIpFilesUpdate>
+
+    <!-- property for generating Eclipse source reference bundle headers -->
+    <tycho.scmUrl>scm:git:https://git.eclipse.org/r/p/orbit/recipes.git</tycho.scmUrl>
+
+    <!-- by default complain if working tree is dirty (error|warning|ignore) -->
+    <dirtyWorkingTree>error</dirtyWorkingTree>
+
+    <!-- ignore files that will not affect bundle metadata -->
+    <jgit.ignore></jgit.ignore>
+
+    <!-- set default vendor -->
+    <bundleVendor>Eclipse Orbit</bundleVendor>
+
+    <!-- values needed for generating repositories -->
+    <maven.build.timestamp.format>yyyyMMddHHmmss</maven.build.timestamp.format>
+    <buildTimestamp>${maven.build.timestamp}</buildTimestamp>
+    <buildType>I</buildType>
+    <buildId>${buildType}${buildTimestamp}</buildId>
+    <buildLabel>${buildType}-${buildId}-${buildTimestamp}</buildLabel>
+
+    <!-- Reference repository for the report, and for content baseline Orbit 2020-12 M1 Contribution -->
+    <referenceRepoBuild>S20201005193535</referenceRepoBuild>
+
+    <!-- Reference repository for the old-style Orbit R-build from CVS -->
+    <orbitOldRBuild>R20190726180751</orbitOldRBuild>
+
+  </properties>
+
+  <pluginRepositories>
+    <!-- configure the EBR plug-in repo -->
+    <pluginRepository>
+      <id>ebr-releases</id>
+      <url>https://repo.eclipse.org/content/repositories/ebr-releases/</url>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+    </pluginRepository>
+    <pluginRepository>
+      <id>ebr-snapshots</id>
+      <url>https://repo.eclipse.org/content/repositories/ebr-snapshots/</url>
+      <releases>
+        <enabled>false</enabled>
+      </releases>
+    </pluginRepository>
+    <pluginRepository>
+      <id>cbi-releases</id>
+      <url>https://repo.eclipse.org/content/repositories/cbi-releases/</url>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+    </pluginRepository>
+    <pluginRepository>
+      <id>cbi-snapshots</id>
+      <url>https://repo.eclipse.org/content/repositories/cbi-snapshots/</url>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </pluginRepository>
+  </pluginRepositories>
+
+  <repositories>
+    <!-- Artifacts approved for Orbit that can't be taken from Maven Central -->
+    <repository>
+      <id>orbit-approved-artifacts</id>
+      <url>https://repo.eclipse.org/content/repositories/orbit-approved-artifacts</url>
+    </repository>
+    <!-- target platform should reference old-style repository content -->
+    <repository>
+      <id>eclipse-orbit-old</id>
+      <layout>p2</layout>
+      <url>https://download.eclipse.org/tools/orbit/downloads/drops/${orbitOldRBuild}/repository/</url>
+    </repository>
+    <!-- some bundles might depend on base platform content -->
+    <repository>
+      <id>eclipse-platform</id>
+      <url>https://download.eclipse.org/eclipse/updates/4.18/</url>
+      <layout>p2</layout>
+    </repository>
+  </repositories>
+
+  <profiles>
+    <profile>
+      <!-- define a profile for generating/updating the Eclipse ip_log.xml -->
+      <id>iplog</id>
+      <activation>
+        <!-- activate the profile by default, can be disabled using '-P-iplog' mvn command line argument -->
+        <property>
+          <name>!skipIpLog</name>
+          <value>!true</value>
+        </property>
+      </activation>
+      <build>
+        <pluginManagement>
+          <plugins>
+            <plugin>
+              <groupId>org.eclipse.ebr</groupId>
+              <artifactId>ebr-maven-plugin</artifactId>
+              <executions>
+                <execution>
+                  <phase>package</phase>
+                  <goals>
+                    <goal>eclipse-ip-info</goal>
+                  </goals>
+                </execution>
+              </executions>
+              <configuration>
+                <force>${forceIpFilesUpdate}</force>
+                <includes>${recipe.includes}</includes>
+                <excludes>${recipe.excludes}</excludes>
+              </configuration>
+            </plugin>
+          </plugins>
+        </pluginManagement>
+      </build>
+    </profile>
+    <profile>
+      <id>eclipse-sign</id>
+      <activation>
+        <property>
+          <name>eclipse-sign</name>
+        </property>
+      </activation>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.eclipse.tycho.extras</groupId>
+            <artifactId>tycho-pack200a-plugin</artifactId>
+            <version>${tycho-version}</version>
+            <configuration>
+              <supportedProjectTypes>
+                <supportedProjectType>eclipse-bundle-recipe</supportedProjectType>
+              </supportedProjectTypes>
+            </configuration>
+            <executions>
+              <execution>
+                <id>pack200-normalize</id>
+                <goals>
+                  <goal>normalize</goal>
+                </goals>
+                <phase>package</phase>
+              </execution>
+            </executions>
+          </plugin>
+          <plugin>
+            <groupId>org.eclipse.cbi.maven.plugins</groupId>
+            <artifactId>eclipse-jarsigner-plugin</artifactId>
+            <configuration>
+              <resigningStrategy>OVERWRITE</resigningStrategy>
+            </configuration>
+            <executions>
+              <execution>
+                <id>sign</id>
+                <phase>package</phase>
+                <goals>
+                  <goal>sign</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+          <plugin>
+            <groupId>org.eclipse.tycho.extras</groupId>
+            <artifactId>tycho-pack200b-plugin</artifactId>
+            <version>${tycho-version}</version>
+            <configuration>
+              <supportedProjectTypes>
+                <supportedProjectType>eclipse-bundle-recipe</supportedProjectType>
+              </supportedProjectTypes>
+            </configuration>
+            <executions>
+              <execution>
+                <id>pack200-pack</id>
+                <goals>
+                  <goal>pack</goal>
+                </goals>
+                <phase>package</phase>
+              </execution>
+            </executions>
+          </plugin>
+          <plugin>
+            <groupId>org.eclipse.tycho</groupId>
+            <artifactId>tycho-p2-plugin</artifactId>
+            <version>${tycho-version}</version>
+            <executions>
+              <execution>
+                <id>p2-metadata</id>
+                <goals>
+                  <goal>p2-metadata</goal>
+                </goals>
+                <phase>package</phase>
+              </execution>
+            </executions>
+            <configuration>
+              <supportedProjectTypes>
+                <supportedProjectType>eclipse-bundle-recipe</supportedProjectType>
+                <supportedProjectType>eclipse-feature</supportedProjectType>
+              </supportedProjectTypes>
+              <defaultP2Metadata>false</defaultP2Metadata>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+    <!-- Bug 513496 : We use the 4.8milestones repository to resolve bundles that have dependencies on content in the platform
+      itself. (eg. org.apache.felix.scr requires org.eclipse.osgi) Unfortunately 4.8milestones can include the same bundles that
+      we generate (eg. org.apache.commons.fileupload) and when this happens Tycho attempts to download packed versions (.pack.gz)
+      of these for resolution even when unpacked versions already exist in the local repository. This causes information to be
+      lost (overwritten) and a failure to locate the corresponding source bundles. The workaround is to ensure we generate packed
+      artifacts as part of the build at all times (signing not required). -->
+    <profile>
+      <id>do-not-eclipse-sign</id>
+      <activation>
+        <property>
+          <name>!eclipse-sign</name>
+        </property>
+      </activation>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.eclipse.tycho.extras</groupId>
+            <artifactId>tycho-pack200a-plugin</artifactId>
+            <version>${tycho-version}</version>
+            <configuration>
+              <supportedProjectTypes>
+                <supportedProjectType>eclipse-bundle-recipe</supportedProjectType>
+              </supportedProjectTypes>
+            </configuration>
+            <executions>
+              <execution>
+                <id>pack200-normalize</id>
+                <goals>
+                  <goal>normalize</goal>
+                </goals>
+                <phase>package</phase>
+              </execution>
+            </executions>
+          </plugin>
+          <plugin>
+            <groupId>org.eclipse.tycho.extras</groupId>
+            <artifactId>tycho-pack200b-plugin</artifactId>
+            <version>${tycho-version}</version>
+            <configuration>
+              <supportedProjectTypes>
+                <supportedProjectType>eclipse-bundle-recipe</supportedProjectType>
+              </supportedProjectTypes>
+            </configuration>
+            <executions>
+              <execution>
+                <id>pack200-pack</id>
+                <goals>
+                  <goal>pack</goal>
+                </goals>
+                <phase>package</phase>
+              </execution>
+            </executions>
+          </plugin>
+          <plugin>
+            <groupId>org.eclipse.tycho</groupId>
+            <artifactId>tycho-p2-plugin</artifactId>
+            <version>${tycho-version}</version>
+            <executions>
+              <execution>
+                <id>p2-metadata</id>
+                <goals>
+                  <goal>p2-metadata</goal>
+                </goals>
+                <phase>package</phase>
+              </execution>
+            </executions>
+            <configuration>
+              <supportedProjectTypes>
+                <supportedProjectType>eclipse-bundle-recipe</supportedProjectType>
+                <supportedProjectType>eclipse-feature</supportedProjectType>
+              </supportedProjectTypes>
+              <defaultP2Metadata>false</defaultP2Metadata>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+    <profile>
+      <id>artifact-comparator</id>
+      <activation>
+        <property>
+          <name>artifact-comparator</name>
+        </property>
+      </activation>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.eclipse.tycho</groupId>
+            <artifactId>tycho-p2-plugin</artifactId>
+            <version>${tycho-version}</version>
+            <executions>
+              <execution>
+                <id>p2-metadata</id>
+                <goals>
+                  <goal>p2-metadata</goal>
+                </goals>
+                <phase>package</phase>
+              </execution>
+            </executions>
+            <configuration>
+              <baselineRepositories>
+                <repository>
+                  <url>https://download.eclipse.org/tools/orbit/downloads/drops/${referenceRepoBuild}/repository</url>
+                </repository>
+              </baselineRepositories>
+              <supportedProjectTypes>
+                <supportedProjectType>eclipse-bundle-recipe</supportedProjectType>
+                <supportedProjectType>eclipse-feature</supportedProjectType>
+              </supportedProjectTypes>
+              <defaultP2Metadata>false</defaultP2Metadata>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
+
+  <build>
+    <plugins>
+      <!-- configure default plug-ins -->
+
+      <!-- enable Tycho -->
+      <plugin>
+        <groupId>org.eclipse.tycho</groupId>
+        <artifactId>tycho-maven-plugin</artifactId>
+        <extensions>true</extensions>
+      </plugin>
+
+      <!-- target platform configuration -->
+      <plugin>
+        <groupId>org.eclipse.tycho</groupId>
+        <artifactId>target-platform-configuration</artifactId>
+        <configuration>
+          <environments>
+            <environment>
+              <os>*</os>
+              <ws>*</ws>
+              <arch>*</arch>
+            </environment>
+          </environments>
+          <includePackedArtifacts>true</includePackedArtifacts>
+        </configuration>
+      </plugin>
+
+      <!-- configure build qualifier generation as well as source reference headers -->
+      <plugin>
+        <groupId>org.eclipse.tycho</groupId>
+        <artifactId>tycho-packaging-plugin</artifactId>
+        <dependencies>
+          <dependency>
+            <groupId>org.eclipse.tycho.extras</groupId>
+            <artifactId>tycho-sourceref-jgit</artifactId>
+            <version>${tycho-version}</version>
+          </dependency>
+          <dependency>
+            <groupId>org.eclipse.tycho.extras</groupId>
+            <artifactId>tycho-buildtimestamp-jgit</artifactId>
+            <version>${tycho-version}</version>
+          </dependency>
+        </dependencies>
+        <configuration>
+          <!-- use qualifier from properties -->
+          <format>${recipe.qualifier.format}</format>
+          <!-- generate bundle .qualifier from Git tags/commits -->
+          <timestampProvider>jgit</timestampProvider>
+          <jgit.ignore>
+          ${jgit.ignore}
+          </jgit.ignore>
+          <!-- allow to ignore dirty working trees -->
+          <jgit.dirtyWorkingTree>${dirtyWorkingTree}</jgit.dirtyWorkingTree>
+          <!-- generate source references -->
+          <sourceReferences>
+            <generate>true</generate>
+          </sourceReferences>
+        </configuration>
+      </plugin>
+
+
+      <!-- configure bundle build so that properties defined above will be considered -->
+      <plugin>
+        <groupId>org.eclipse.ebr</groupId>
+        <artifactId>ebr-maven-plugin</artifactId>
+        <extensions>true</extensions>
+        <configuration>
+          <includes>${recipe.includes}</includes>
+          <excludes>${recipe.excludes}</excludes>
+          <unpackDependencies>${recipe.unpackdependencies}</unpackDependencies>
+          <stripVersion>${recipe.stripversion}</stripVersion>
+          <excludeDotFolderFromBundleClasspath>${recipe.excludedotfolder}</excludeDotFolderFromBundleClasspath>
+          <bndInstructions>
+            <Bundle-Name>${recipe.Bundle-Name}</Bundle-Name>
+            <Bundle-Vendor>${recipe.Bundle-Vendor}</Bundle-Vendor>
+            <Bundle-Description>${recipe.Bundle-Description}</Bundle-Description>
+            <Automatic-Module-Name>${project.artifactId}</Automatic-Module-Name>
+            <_removeheaders>${recipe.removeheaders},${recipe.removeadditionalheaders}</_removeheaders>
+            <_include>-${recipe.bndfile}</_include>
+          </bndInstructions>
+        </configuration>
+      </plugin>
+
+    </plugins>
+    <pluginManagement>
+      <!-- define versions and defaults for plug-ins used in Maven -->
+
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>3.8.1</version>
+        </plugin>
+        <plugin>
+          <groupId>org.eclipse.tycho</groupId>
+          <artifactId>tycho-maven-plugin</artifactId>
+          <version>${tycho-version}</version>
+        </plugin>
+        <plugin>
+          <groupId>org.eclipse.tycho</groupId>
+          <artifactId>tycho-packaging-plugin</artifactId>
+          <version>${tycho-version}</version>
+        </plugin>
+        <plugin>
+          <groupId>org.eclipse.tycho</groupId>
+          <artifactId>tycho-p2-plugin</artifactId>
+          <version>${tycho-version}</version>
+        </plugin>
+        <plugin>
+          <groupId>org.eclipse.tycho</groupId>
+          <artifactId>tycho-p2-director-plugin</artifactId>
+          <version>${tycho-version}</version>
+        </plugin>
+        <plugin>
+          <groupId>org.eclipse.tycho</groupId>
+          <artifactId>tycho-p2-repository-plugin</artifactId>
+          <version>${tycho-version}</version>
+        </plugin>
+        <plugin>
+          <groupId>org.eclipse.tycho</groupId>
+          <artifactId>target-platform-configuration</artifactId>
+          <version>${tycho-version}</version>
+        </plugin>
+        <plugin>
+          <groupId>org.eclipse.tycho</groupId>
+          <artifactId>tycho-source-plugin</artifactId>
+          <version>${tycho-version}</version>
+        </plugin>
+        <plugin>
+          <groupId>org.eclipse.tycho.extras</groupId>
+          <artifactId>tycho-source-feature-plugin</artifactId>
+          <version>${tycho-version}</version>
+          <configuration>
+            <!-- Some CQs might be binary distribution only -->
+            <excludes>
+              <plugin id="com.sun.grid.drmaa" />
+              <plugin id="com.google.code.findbugs.jsr305" />
+              <plugin id="net.jini" />
+              <plugin id="org.ggf.drmaa" />
+              <plugin id="org.apache.batik.pdf" />
+              <plugin id="org.apache.wsil4j" />
+              <plugin id="org.apache.poi.ooxml.schemas" />
+            </excludes>
+          </configuration>
+        </plugin>
+        <plugin>
+          <groupId>org.eclipse.tycho.extras</groupId>
+          <artifactId>tycho-custom-bundle-plugin</artifactId>
+          <version>${tycho-version}</version>
+        </plugin>
+        <plugin>
+          <groupId>org.eclipse.tycho.extras</groupId>
+          <artifactId>tycho-p2-extras-plugin</artifactId>
+          <version>${tycho-version}</version>
+        </plugin>
+        <plugin>
+          <groupId>org.eclipse.ebr</groupId>
+          <artifactId>ebr-maven-plugin</artifactId>
+          <version>${ebr-version}</version>
+        </plugin>
+        <plugin>
+          <groupId>org.eclipse.ebr</groupId>
+          <artifactId>ebr-tycho-extras-plugin</artifactId>
+          <version>${ebr-version}</version>
+        </plugin>
+
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-dependency-plugin</artifactId>
+          <version>${maven-dependency-version}</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-resources-plugin</artifactId>
+          <version>${maven-resources-version}</version>
+        </plugin>
+        <plugin>
+          <groupId>org.eclipse.cbi.maven.plugins</groupId>
+          <artifactId>eclipse-jarsigner-plugin</artifactId>
+          <version>1.1.7</version>
+        </plugin>
+      </plugins>
+
+    </pluginManagement>
+  </build>
+
+</project>

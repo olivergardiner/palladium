@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="ASCII"?>
+<fragment:ModelFragments xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:commands="http://www.eclipse.org/ui/2010/UIModel/application/commands" xmlns:fragment="http://www.eclipse.org/ui/2010/UIModel/fragment" xmi:id="_emtIcCNMEeuTkLK5AAYUhw">
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_CDuNICNtEeuTkLK5AAYUhw" featurename="commands" parentElementId="xpath:/">
+    <elements xsi:type="commands:Command" xmi:id="_PGdqsCNtEeuTkLK5AAYUhw" elementId="uk.org.whitecottage.palladium.helper.command.editcardinality" commandName="Edit Cardinality" description="Edits the cardinality of the selected Association">
+      <parameters xmi:id="_PGdqsSNtEeuTkLK5AAYUhw" elementId="uk.org.whitecottage.palladium.commandparameter.cardinality" name="Cardinality" optional="false"/>
+    </elements>
+    <elements xsi:type="commands:Command" xmi:id="_PGguACNtEeuTkLK5AAYUhw" elementId="uk.org.whitecottage.palladium.helper.command.stereotypes" commandName="Apply Stereotypes" description="Selects Stereotypes to apply to selected element"/>
+    <elements xsi:type="commands:Command" xmi:id="_PGhVECNtEeuTkLK5AAYUhw" elementId="uk.org.whitecottage.palladium.helper.command.comments" commandName="Edit Comments" description="Edits Owned Comments for the selected element"/>
+    <elements xsi:type="commands:Command" xmi:id="_PGh8ICNtEeuTkLK5AAYUhw" elementId="uk.org.whitecottage.palladium.helper.command.editpropertycardinality" commandName="Edit Property Cardinality" description="Edits the cardinality of the selected Property">
+      <parameters xmi:id="_PGh8ISNtEeuTkLK5AAYUhw" elementId="uk.org.whitecottage.palladium.commandparameter.propertycardinality" name="Property Cardinality" optional="false"/>
+    </elements>
+    <elements xsi:type="commands:Command" xmi:id="_PGjKQSNtEeuTkLK5AAYUhw" elementId="uk.org.whitecottage.palladium.helper.command.setreferencedata" commandName="Set as &lt;&lt;ReferenceData>>" description="Applies the stereotype &lt;&lt;ReferenceData>> to selected Classes"/>
+    <elements xsi:type="commands:Command" xmi:id="_PGkYYCNtEeuTkLK5AAYUhw" elementId="uk.org.whitecottage.palladium.helper.command.setdocumentation" commandName="Set as &lt;&lt;Documentation>>" description="Applies the stereotype &lt;&lt;Documentation>> to selected Comments"/>
+    <elements xsi:type="commands:Command" xmi:id="_W8YK8KcrEeuFM8t4W_2yxw" elementId="uk.org.whitecottage.palladium.helper.type" commandName="Set Type" description="Sets a Property's Type using the Model Element Selector Dialog"/>
+  </fragments>
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_XFYpECNtEeuTkLK5AAYUhw" featurename="handlers" parentElementId="xpath:/">
+    <elements xsi:type="commands:Handler" xmi:id="_XFYpESNtEeuTkLK5AAYUhw" elementId="uk.org.whitecottage.palladium.handler.1" contributionURI="bundleclass://uk.org.whitecottage.palladium.helper/uk.org.whitecottage.palladium.helper.CardinalityHandler" command="_PGdqsCNtEeuTkLK5AAYUhw"/>
+    <elements xsi:type="commands:Handler" xmi:id="_XFYpEiNtEeuTkLK5AAYUhw" elementId="uk.org.whitecottage.palladium.handler.3" contributionURI="bundleclass://uk.org.whitecottage.palladium.helper/uk.org.whitecottage.palladium.helper.StereotypeHandler" command="_PGguACNtEeuTkLK5AAYUhw"/>
+    <elements xsi:type="commands:Handler" xmi:id="_XFYpEyNtEeuTkLK5AAYUhw" elementId="uk.org.whitecottage.palladium.handler.4" contributionURI="bundleclass://uk.org.whitecottage.palladium.helper/uk.org.whitecottage.palladium.helper.CommentsHandler" command="_PGhVECNtEeuTkLK5AAYUhw"/>
+    <elements xsi:type="commands:Handler" xmi:id="_XFYpFCNtEeuTkLK5AAYUhw" elementId="uk.org.whitecottage.palladium.handler.5" contributionURI="bundleclass://uk.org.whitecottage.palladium.helper/uk.org.whitecottage.palladium.helper.PropertyCardinalityHandler" command="_PGh8ICNtEeuTkLK5AAYUhw"/>
+    <elements xsi:type="commands:Handler" xmi:id="_XFYpFiNtEeuTkLK5AAYUhw" elementId="uk.org.whitecottage.palladium.handler.7" contributionURI="bundleclass://uk.org.whitecottage.palladium.helper/uk.org.whitecottage.palladium.helper.SetReferenceData" command="_PGjKQSNtEeuTkLK5AAYUhw"/>
+    <elements xsi:type="commands:Handler" xmi:id="_XFYpFyNtEeuTkLK5AAYUhw" elementId="uk.org.whitecottage.palladium.handler.8" contributionURI="bundleclass://uk.org.whitecottage.palladium.helper/uk.org.whitecottage.palladium.helper.SetDocumentation" command="_PGkYYCNtEeuTkLK5AAYUhw"/>
+    <elements xsi:type="commands:Handler" xmi:id="_jc8vkKcrEeuFM8t4W_2yxw" elementId="uk.org.whitecottage.palladium.helper.handler.0" contributionURI="bundleclass://uk.org.whitecottage.palladium.helper/uk.org.whitecottage.palladium.helper.TypeHandler" command="_W8YK8KcrEeuFM8t4W_2yxw"/>
+  </fragments>
+</fragment:ModelFragments>

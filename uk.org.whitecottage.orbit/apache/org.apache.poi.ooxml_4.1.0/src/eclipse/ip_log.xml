@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ip_log version="1.0">
+  <project id="org.apache.poi.ooxml" version="4.1.0" status="done">
+    <info>
+      <name>POI: Apache libraries for creating and manipulating Office documents</name>
+    </info>
+    <contact>
+      <name>Oliver Gardiner</name>
+      <email>olivergardiner@whitecottage.org</email>
+      <company>White Cottage</company>
+    </contact>
+    <legal>
+      <license>
+        <name>Apache License, 2.0</name>
+        <reference>http://www.apache.org/licenses/LICENSE-2.0.txt</reference>
+      </license>
+      <package>poi-ooxml-4.1.0.jar</package>
+    </legal>
+  </project>
+</ip_log>

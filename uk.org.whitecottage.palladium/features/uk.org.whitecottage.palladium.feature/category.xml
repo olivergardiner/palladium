@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/uk.org.whitecottage.palladium.feature_1.2.1.jar" id="uk.org.whitecottage.palladium.feature" version="1.2.1">
+      <category name="uk.org.whitecottage.palladium.category"/>
+   </feature>
+   <category-def name="uk.org.whitecottage.palladium.category" label="Palladium">
+      <description>
+         Tools for logical data modelling and integration modelling based on Eclipse Papyrus
+      </description>
+   </category-def>
+</site>

@@ -1,0 +1,19 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	
+	<groupId>uk.org.whitecottage.palladium</groupId>
+	<artifactId>palladium</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	
+	<properties>
+		<local.orbit>${maven.multiModuleProjectDirectory}/../uk.org.whitecottage.orbit/releng/repository/target/repository</local.orbit>
+		<local.nebula>${maven.multiModuleProjectDirectory}/../org.eclipse.swt.nebula-root/releng/org.eclipse.nebula.updatesite/target/repository</local.nebula>
+	</properties>
+
+	<modules>
+		<module>releng</module>
+	</modules>
+</project>
