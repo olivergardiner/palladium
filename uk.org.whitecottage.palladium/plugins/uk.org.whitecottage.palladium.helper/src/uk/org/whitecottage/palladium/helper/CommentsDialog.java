@@ -128,7 +128,7 @@ public class CommentsDialog extends TitleAreaDialog {
 				text.setFocus();
 			}
 		});
-		button.setImage(ResourceManager.getPluginImage("uk.org.whitecottage.palladium", "icons/Add.gif"));
+		button.setImage(ResourceManager.getPluginImage("uk.org.whitecottage.palladium.core", "icons/Add.gif"));
 		
 		Button button_1 = new Button(composite_2, SWT.NONE);
 		button_1.addMouseListener(new MouseAdapter() {
@@ -147,7 +147,7 @@ public class CommentsDialog extends TitleAreaDialog {
 				}
 			}
 		});
-		button_1.setImage(ResourceManager.getPluginImage("uk.org.whitecottage.palladium", "icons/Delete.gif"));
+		button_1.setImage(ResourceManager.getPluginImage("uk.org.whitecottage.palladium.core", "icons/Delete.gif"));
 		
 		Button button_2 = new Button(composite_2, SWT.NONE);
 		Button button_3 = new Button(composite_2, SWT.NONE);
@@ -164,7 +164,7 @@ public class CommentsDialog extends TitleAreaDialog {
 				button_3.setEnabled(currentComment < list.getItemCount() - 1);
 			}
 		});
-		button_2.setImage(ResourceManager.getPluginImage("uk.org.whitecottage.palladium", "icons/ArrowUp.gif"));
+		button_2.setImage(ResourceManager.getPluginImage("uk.org.whitecottage.palladium.core", "icons/ArrowUp.gif"));
 		
 		button_3.addMouseListener(new MouseAdapter() {
 			@Override
@@ -178,7 +178,7 @@ public class CommentsDialog extends TitleAreaDialog {
 				button_3.setEnabled(currentComment < list.getItemCount() - 1);
 			}
 		});
-		button_3.setImage(ResourceManager.getPluginImage("uk.org.whitecottage.palladium", "icons/ArrowDown.gif"));
+		button_3.setImage(ResourceManager.getPluginImage("uk.org.whitecottage.palladium.core", "icons/ArrowDown.gif"));
 		
 		Composite composite = new Composite(composite_1, SWT.NONE);
 		composite.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false, 1, 1));

@@ -26,6 +26,7 @@ import org.eclipse.uml2.uml.Profile;
 import org.eclipse.uml2.uml.Stereotype;
 
 import uk.org.whitecottage.palladium.util.handler.HandlerUtilPalladium;
+import uk.org.whitecottage.palladium.util.profile.ProfileUtil;
 
 public class SetDocumentation {
 	@Execute
@@ -49,23 +50,18 @@ public class SetDocumentation {
 					ele = Platform.getAdapterManager().getAdapter(selectedDiagramElement, Element.class);
 				}
 				
-				if (ele instanceof Comment) {
-					Profile profile = ele.getModel().getAppliedProfile("ldml");
-					if (profile == null) {
-						profile = ele.getModel().getAppliedProfile("pldm.profile");
-					}
+				if (ele instanceof Comment || ele instanceof org.eclipse.uml2.uml.Package) {
+					Profile profile = ProfileUtil.getProfile(ele.getModel());
 					
 					if (profile != null) {
 						Stereotype documentation = profile.getOwnedStereotype("Documentation");
 						
-						Comment c = (Comment) ele;
-						
 						if (documentation != null) {
-							EList<Stereotype> appliedStereotypes = c.getAppliedStereotypes();
+							EList<Stereotype> appliedStereotypes = ele.getAppliedStereotypes();
 
 							if (!appliedStereotypes.contains(documentation)) {
 								// Add the Stereotype as it is not currently applied
-								command.append(new ApplyStereotypeCommand(c, documentation, editingDomain));
+								command.append(new ApplyStereotypeCommand(ele, documentation, editingDomain));
 							}
 						}
 					}
