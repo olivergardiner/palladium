@@ -11,11 +11,7 @@ How to build all the bundles
 ----------------------------
 
 1. Clone this repository and go into the repository root folder.
-2. Run the following command to build the OSGi bundle: `mvn clean install`
-
-This will publish all OSGi bundles produced by the recipes into your local Maven repository. You can consume
-the bundles directly from Maven in any Tycho build.
-
+2. `mvn clean install`
 3. `mvn clean install -P build`
 4. `mvn clean install -P aggregation`
 5. `mvn clean package -P repository`
