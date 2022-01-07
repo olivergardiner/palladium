@@ -4,7 +4,7 @@ Fat or Thin client applications based on Java and SWT.
 
 This is a modified copy of the official nebula release and is included solely for the purpose of turning off automatic linking of text with an "@" within the rich text editor implemented by CKEditor. This is a feature of the Webkit browser, and not code explicitly within CKEditor, but requires a javascript directive to turn this feature off (as it is on by default). Specifically, in the template.html file for the "richtext" widget, this line is added:
 
-'document.execCommand("AutoUrlDetect", false, false)'
+    document.execCommand("AutoUrlDetect", false, false)
 
 
 ## Download
