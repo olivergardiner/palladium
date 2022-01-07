@@ -16,13 +16,9 @@ How to build all the bundles
 This will publish all OSGi bundles produced by the recipes into your local Maven repository. You can consume
 the bundles directly from Maven in any Tycho build.
 
-
-### Generate p2 repository
-
-1. Go into the repository root folder.
-2. `mvn clean install -P build`
-3. `mvn clean install -P aggregation`
-4. `mvn clean package -P repository`
+3. `mvn clean install -P build`
+4. `mvn clean install -P aggregation`
+5. `mvn clean package -P repository`
 
 The repository will be made available as archive in `releng/repository/target`.
 
