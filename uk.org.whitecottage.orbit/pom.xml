@@ -22,7 +22,6 @@
 				<activeByDefault>true</activeByDefault>
 			</activation>
 			<modules>
-				<module>apache</module>
 				<module>freemarker</module>
 			</modules>
 		</profile>

@@ -21,6 +21,7 @@
          id="org.freemarker"
          download-size="0"
          install-size="0"
-         version="2.3.30.v20201112-1258"/>
+         version="0.0.0"
+         unpack="false"/>
 
 </feature>
