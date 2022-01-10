@@ -5,7 +5,7 @@ This project is used for building OSGI bundles that can be incorporated into PAl
 
 The only dependency not now available within Eclipse Orbit is Freemarker - this is present in Eclipse Orbit but only an early version that does not have the required functionality.
 
-This repository builds with Java 8
+This repository builds with Java 8 and Java 11
 
 How to build all the bundles 
 ----------------------------
