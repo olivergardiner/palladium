@@ -112,11 +112,10 @@
 			<layout>p2</layout>
 			<url>https://download.eclipse.org/xwt/milestones-1.7.0/1.7.0-S/</url>
 		</repository> -->
-		<!-- Local Nebula to fix auto email linking -->
 		<repository>
-			<id>local-nebula</id>
+			<id>nebula</id>
 			<layout>p2</layout>
-			<url>file:/${local.nebula}</url>
+			<url>https://download.eclipse.org/nebula/releases/latest/</url>
 		</repository>
 		<!-- Local Orbit only required for Fremarker -->
 		<repository>

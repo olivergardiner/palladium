@@ -1,7 +1,6 @@
 target "Palladium RCP" with requirements source
 
-//location nebula "https://download.eclipse.org/nebula/releases/latest/" {
-location local-nebula "file:/Development/pldm.tools/org.eclipse.swt.nebula-root/releng/org.eclipse.nebula.updatesite/target/repository" {
+location nebula "https://download.eclipse.org/nebula/releases/latest/" {
 	org.eclipse.nebula.widgets.richtext.feature.feature.group
 	org.eclipse.nebula.cwt.feature.feature.group
 }

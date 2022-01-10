@@ -10,6 +10,8 @@ import org.eclipse.jface.viewers.ListViewer;
 import org.eclipse.nebula.widgets.richtext.RichTextEditor;
 import org.eclipse.nebula.widgets.richtext.RichTextEditorConfiguration;
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.browser.ProgressEvent;
+import org.eclipse.swt.browser.ProgressListener;
 import org.eclipse.swt.events.MouseAdapter;
 import org.eclipse.swt.events.MouseEvent;
 import org.eclipse.swt.events.SelectionAdapter;
@@ -230,6 +232,19 @@ public class CommentsDialog extends TitleAreaDialog {
 		gd_text.heightHint = 500;
 		gd_text.widthHint = 371;
 		text.setLayoutData(gd_text);
+		
+		text.getEditorConfiguration().getBrowser().addProgressListener(new ProgressListener() {
+			 
+		     @Override
+		     public void completed(ProgressEvent event) {
+		         text.executeJavascript("document.execCommand('AutoUrlDetect', false, false);");
+		     }
+
+		     @Override
+		     public void changed(ProgressEvent event) {
+		    	 // Not needed
+		     }
+		 });
 
 		initialiseList(list);
 
