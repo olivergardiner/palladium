@@ -16,7 +16,7 @@
         <name>Apache License, 2.0</name>
         <reference>http://www.apache.org/licenses/LICENSE-2.0.txt</reference>
       </license>
-      <package>freemarker-2.3.28.jar</package>
+      <package>freemarker-2.3.30.jar</package>
     </legal>
   </project>
 </ip_log>

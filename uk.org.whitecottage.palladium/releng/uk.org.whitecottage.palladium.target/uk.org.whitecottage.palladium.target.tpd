@@ -5,7 +5,7 @@ location nebula "https://download.eclipse.org/nebula/releases/latest/" {
 	org.eclipse.nebula.cwt.feature.feature.group
 }
 
-location local-orbit "file:/Development/pldm.tools/uk.org.whitecottage.orbit/releng/repository/target/repository" {
+location local-orbit "file:/Development/palladium/uk.org.whitecottage.orbit/releng/repository/target/repository" {
 	org.freemarker [2.3.28, 3.0.0)
 }
 
