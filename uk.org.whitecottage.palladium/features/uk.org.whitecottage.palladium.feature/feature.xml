@@ -2,7 +2,7 @@
 <feature
       id="uk.org.whitecottage.palladium.feature"
       label="Palladium"
-      version="2.0.10.qualifier">
+      version="2.0.11.qualifier">
 
    <description url="http://www.example.com/description">
       [Enter Feature Description here.]
@@ -222,6 +222,20 @@
 
    <plugin
          id="uk.org.whitecottage.palladium.util"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="uk.org.whitecottage.palladium.owl2"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="uk.org.whitecottage.swagger"
          download-size="0"
          install-size="0"
          version="0.0.0"

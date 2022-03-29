@@ -40,7 +40,7 @@
 				<repository>
 					<id>papyrus</id>
 					<layout>p2</layout>
-					<url>https://download.eclipse.org/modeling/mdt/papyrus/updates/releases/2021-12/</url>
+					<url>https://download.eclipse.org/modeling/mdt/papyrus/updates/releases/2022-03/</url>
 				</repository>
 				<!-- <repository>
 					<id>papyrus-compare</id>
@@ -64,7 +64,7 @@
 				<repository>
 					<id>papyrus</id>
 					<layout>p2</layout>
-					<url>https://download.eclipse.org/modeling/mdt/papyrus/updates/releases/2021-12/</url>
+					<url>https://download.eclipse.org/modeling/mdt/papyrus/updates/releases/2022-03/</url>
 				</repository>
 				<!-- <repository>
 					<id>papyrus-compare</id>
@@ -99,12 +99,12 @@
 		<repository>
 			<id>eclipse-releases</id>
 			<layout>p2</layout>
-			<url>https://download.eclipse.org/releases/2021-12/</url>
+			<url>https://download.eclipse.org/releases/2022-03/</url>
 		</repository>
 		<repository>
 			<id>eclipse</id>
 			<layout>p2</layout>
-			<url>http://download.eclipse.org/eclipse/updates/4.22/</url>
+			<url>http://download.eclipse.org/eclipse/updates/4.23/</url>
 		</repository>
 		<!-- XWT fix -->
 		<!--<repository>
@@ -126,7 +126,7 @@
 		<repository>
 			<id>orbit</id>
 			<layout>p2</layout>
-			<url>https://download.eclipse.org/tools/orbit/downloads/drops/R20211122181901/repository</url>
+			<url>https://download.eclipse.org/tools/orbit/downloads/drops/R20220302172233/repository</url>
 		</repository>
 	</repositories>
 

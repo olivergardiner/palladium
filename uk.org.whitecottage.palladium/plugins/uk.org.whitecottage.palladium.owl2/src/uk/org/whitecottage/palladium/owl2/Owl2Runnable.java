@@ -1,5 +1,6 @@
-package uk.org.whitecottage.palladium.export;
+package uk.org.whitecottage.palladium.owl2;
 
+import java.io.FileNotFoundException;
 import java.lang.reflect.InvocationTargetException;
 
 import org.eclipse.core.runtime.IPath;
@@ -19,17 +20,14 @@ import org.eclipse.ui.IFileEditorInput;
 import org.eclipse.uml2.uml.Model;
 import org.eclipse.uml2.uml.UMLPackage;
 
-import uk.org.whitecottage.palladium.exception.NoProfileException;
-import uk.org.whitecottage.palladium.util.profile.ProfileUtil;
-
-public class ExportRunnable implements IRunnableWithProgress {
+public class Owl2Runnable implements IRunnableWithProgress {
     @SuppressWarnings("unused")
 	private IStatusLineManager statusLineManager;
-    private ExportDialog dialog = null;
+    private Owl2Dialog dialog = null;
     private IEditorPart editor;
     private Shell s;
-
-	public ExportRunnable(IStatusLineManager statusLineManager, ExportDialog dialog, IEditorPart editor, Shell s) {
+	
+	public Owl2Runnable(IStatusLineManager statusLineManager, Owl2Dialog dialog, IEditorPart editor, Shell s) {
         this.statusLineManager = statusLineManager;
         this.dialog = dialog;
         this.editor = editor;
@@ -38,8 +36,7 @@ public class ExportRunnable implements IRunnableWithProgress {
 
     @Override
 	public void run(IProgressMonitor monitor) throws InvocationTargetException, InterruptedException {
-		
-		Activator.logInfo("Starting export");
+		Activator.logInfo("Starting conversion to Owl2");
 
 		ServicesRegistry registry = editor.getAdapter(ServicesRegistry.class);
 		
@@ -55,31 +52,17 @@ public class ExportRunnable implements IRunnableWithProgress {
 
 				Resource modelResource = modelSet.getResource(modelUri, true);
 				Model model = (Model) EcoreUtil.getObjectByType(modelResource.getContents(), UMLPackage.Literals.MODEL);
+								
+				// Do the conversion with parameters from the dialog
+				Owl2 owl2 = new Owl2(model, dialog, monitor, s);
+				owl2.createOwl2();
 				
-				if (ProfileUtil.getProfile(model) == null) {
-					throw new InvocationTargetException(new NoProfileException());
-				}
-				
-				switch (dialog.getFormat()) {
-				case COLLIBRA:
-					Activator.logInfo("Exporting Collibra catalogue");
-					ExportCollibra collibra = new ExportCollibra(model, monitor);
-					collibra.export(dialog.getOutputFile());
-					break;
-				case EXCEL:
-					
-					break;
-				case CSV:
-					
-					break;
-				case UNSET:
-				default:
-					break;
-				}
 			}
 								
 		} catch (ServiceException e) {
 			Activator.logError("Service Exception", e);
+		} catch (FileNotFoundException e) {
+			Activator.logError("Could not write output file", e);
 		}
-	}   
+	}
 }

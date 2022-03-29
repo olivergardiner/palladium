@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ASCII"?>
+<fragment:ModelFragments xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:commands="http://www.eclipse.org/ui/2010/UIModel/application/commands" xmlns:fragment="http://www.eclipse.org/ui/2010/UIModel/fragment" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmi:id="_9auLcJuXEey-_6U9V-dzjg">
+  <imports xsi:type="menu:Menu" xmi:id="_IbS88JuYEey-_6U9V-dzjg" elementId="uk.org.whitecottage.palladium.menu.palladium"/>
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_MkjRUJuYEey-_6U9V-dzjg" featurename="commands" parentElementId="xpath:/">
+    <elements xsi:type="commands:Command" xmi:id="_dzFZ4JuYEey-_6U9V-dzjg" elementId="uk.org.whitecottage.palladium.owl2.command.generate" commandName="Owl2" description="Generates an Owl2 ontology definition from the LDML"/>
+  </fragments>
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_nPgRAJuYEey-_6U9V-dzjg" featurename="handlers" parentElementId="xpath:/">
+    <elements xsi:type="commands:Handler" xmi:id="_pdP68JuYEey-_6U9V-dzjg" elementId="uk.org.whitecottage.palladium.owl2.handler.generate" contributionURI="bundleclass://uk.org.whitecottage.palladium.owl2/uk.org.whitecottage.palladium.owl2.Owl2Handler" command="_dzFZ4JuYEey-_6U9V-dzjg"/>
+  </fragments>
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_yaY1EJuYEey-_6U9V-dzjg" featurename="menuContributions" parentElementId="xpath:/">
+    <elements xsi:type="menu:MenuContribution" xmi:id="_03X04JuYEey-_6U9V-dzjg" elementId="uk.org.whitecottage.palladium.owl2.menucontribution.palladium" parentId="uk.org.whitecottage.palladium.menu.palladium">
+      <children xsi:type="menu:HandledMenuItem" xmi:id="_1jGScJuYEey-_6U9V-dzjg" elementId="uk.org.whitecottage.palladium.owl2.handledmenuitem.generate" label="Generate Owl2 Ontology..." command="_dzFZ4JuYEey-_6U9V-dzjg"/>
+    </elements>
+  </fragments>
+</fragment:ModelFragments>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <?pde?>
-<!-- generated with https://github.com/eclipse-cbi/targetplatform-dsl --><target name="Palladium RCP" sequenceNumber="1642502670">
+<target name="Palladium RCP" sequenceNumber="1647519647">
   <locations>
     <location includeAllPlatforms="false" includeConfigurePhase="false" includeMode="planner" includeSource="true" type="InstallableUnit">
       <unit id="org.eclipse.nebula.widgets.richtext.feature.feature.group" version="1.4.0.202011020719"/>
@@ -37,7 +37,8 @@
       <unit id="org.apache.poi.ooxml" version="4.1.1.v20200820-1148"/>
       <unit id="org.apache.poi" version="4.1.1.v20200604-1524"/>
       <unit id="org.apache.poi.ooxml.schemas" version="4.1.1.v20200922-2105"/>
-      <repository id="orbit" location="https://download.eclipse.org/tools/orbit/downloads/drops/R20211122181901/repository"/>
+      <unit id="org.apache.xmlbeans" version="0.0.0"/>
+      <repository id="orbit" location="https://download.eclipse.org/tools/orbit/downloads/drops/R20220302172233/repository"/>
     </location>
     <location includeAllPlatforms="false" includeConfigurePhase="false" includeMode="planner" includeSource="true" type="InstallableUnit">
       <repository id="xwt" location="https://download.eclipse.org/xwt/milestones-1.7.0/1.7.0-S/"/>
@@ -77,15 +78,7 @@
       <unit id="org.eclipse.uml2.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.wst.common_core.feature.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.wst.xml_core.feature.feature.group" version="0.0.0"/>
-      <unit id="org.eclipse.xpand.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.xsd.feature.group" version="0.0.0"/>
-      <unit id="org.eclipse.xtend.feature.group" version="0.0.0"/>
-      <unit id="org.eclipse.xtend.sdk.feature.group" version="0.0.0"/>
-      <unit id="org.eclipse.xtext.runtime.feature.group" version="0.0.0"/>
-      <unit id="org.eclipse.xtext.sdk.feature.group" version="0.0.0"/>
-      <unit id="org.eclipse.xtext.ui.feature.group" version="0.0.0"/>
-      <unit id="org.eclipse.xtext.xbase.feature.group" version="0.0.0"/>
-      <unit id="org.eclipse.xtext.xbase.lib.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.xwt.feature.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.egit.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.jgit.feature.group" version="0.0.0"/>
@@ -100,22 +93,36 @@
       <unit id="org.eclipse.gmf.runtime.sdk.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.gmf.runtime.notation.sdk.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.m2m.qvt.oml.sdk.feature.group" version="0.0.0"/>
-      <unit id="org.eclipse.xpand.sdk.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.emf.cdo.epp.feature.group" version="0.0.0"/>
-      <repository id="releases" location="http://download.eclipse.org/releases/2021-12/"/>
+      <repository id="releases" location="https://download.eclipse.org/releases/2022-03/"/>
+    </location>
+    <location includeAllPlatforms="false" includeConfigurePhase="false" includeMode="planner" includeSource="true" type="InstallableUnit">
+      <unit id="org.eclipse.xtend.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.xtend.sdk.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.xtext.runtime.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.xtext.sdk.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.xtext.ui.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.xtext.xbase.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.xtext.xbase.lib.feature.group" version="0.0.0"/>
+      <repository id="xtend" location="https://download.eclipse.org/modeling/tmf/xtext/updates/composite/releases/"/>
+    </location>
+    <location includeAllPlatforms="false" includeConfigurePhase="false" includeMode="planner" includeSource="true" type="InstallableUnit">
+      <unit id="org.eclipse.xpand.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.xpand.sdk.feature.group" version="0.0.0"/>
+      <repository id="xpand" location="https://download.eclipse.org/modeling/m2t/xpand/updates/"/>
     </location>
     <location includeAllPlatforms="false" includeConfigurePhase="false" includeMode="planner" includeSource="true" type="InstallableUnit">
       <unit id="org.eclipse.sdk.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.e4.core.tools.feature.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.rcp.configuration.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.equinox.executable.feature.group" version="0.0.0"/>
-      <repository id="eclipse" location="https://download.eclipse.org/eclipse/updates/4.22/"/>
+      <repository id="eclipse" location="https://download.eclipse.org/eclipse/updates/4.23/"/>
     </location>
     <location includeAllPlatforms="false" includeConfigurePhase="false" includeMode="planner" includeSource="true" type="InstallableUnit">
       <unit id="org.eclipse.papyrus.sdk.feature.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.papyrus.views.properties.model.xwt" version="0.0.0"/>
       <unit id="org.eclipse.papyrus.toolsmiths.feature.feature.group" version="0.0.0"/>
-      <repository id="papyrus" location="https://download.eclipse.org/modeling/mdt/papyrus/updates/releases/2021-12/"/>
+      <repository id="papyrus" location="https://download.eclipse.org/modeling/mdt/papyrus/updates/releases/2022-03/"/>
     </location>
     <location includeAllPlatforms="false" includeConfigurePhase="false" includeMode="planner" includeSource="true" type="InstallableUnit">
       <unit id="org.eclipse.mylyn.ide_feature.feature.group" version="0.0.0"/>
@@ -126,12 +133,22 @@
       <unit id="org.eclipse.mylyn_feature.feature.group" version="0.0.0"/>
       <repository id="mylyn" location="https://download.eclipse.org/mylyn/releases/3.25/"/>
     </location>
-	  <location includeSource="true" missingManifest="generate" type="Maven">
+	  <location includeDependencyDepth="none" includeDependencyScopes="compile" includeSource="true" missingManifest="generate" type="Maven">
 		  <dependencies>
 			  <dependency>
 				  <groupId>org.freemarker</groupId>
 				  <artifactId>freemarker</artifactId>
 				  <version>2.3.31</version>
+				  <type>jar</type>
+			  </dependency>
+		  </dependencies>
+	  </location>
+	  <location includeDependencyDepth="infinite" includeDependencyScopes="compile" includeSource="true" missingManifest="generate" type="Maven">
+		  <dependencies>
+			  <dependency>
+				  <groupId>org.apache.jena</groupId>
+				  <artifactId>jena-core</artifactId>
+				  <version>4.4.0</version>
 				  <type>jar</type>
 			  </dependency>
 		  </dependencies>

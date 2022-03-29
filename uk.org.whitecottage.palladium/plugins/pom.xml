@@ -31,6 +31,7 @@
 		<module>uk.org.whitecottage.palladium.help</module>
 		<module>uk.org.whitecottage.palladium.preferences</module>
 		<module>uk.org.whitecottage.palladium.perspective</module>
+		<module>uk.org.whitecottage.palladium.owl2</module>
 		<module>uk.org.whitecottage.swagger</module>
 		
 		<!-- Papyrus Compare currently - updated dependencies for compatibility with 5.0.0 -->

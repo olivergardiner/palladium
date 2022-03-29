@@ -7,7 +7,7 @@ location nebula "https://download.eclipse.org/nebula/releases/latest/" {
 
 //manualUpdate
 
-location orbit "https://download.eclipse.org/tools/orbit/downloads/drops/R20211122181901/repository" {
+location orbit "https://download.eclipse.org/tools/orbit/downloads/drops/R20220302172233/repository" {
 	com.google.guava [21.0.0,28.0.0) // emf.compare still needs guava 21.0.0
 	com.google.guava.source [21.0.0,28.0.0)
  	com.google.gson [2.7.0,2.8.0)
@@ -60,7 +60,7 @@ location "https://download.eclipse.org/modeling/emf/compare/updates/releases/lat
 
 //----------------------------
 
-location releases "http://download.eclipse.org/releases/2021-12/" {
+location releases "https://download.eclipse.org/releases/2022-03/" {
     org.eclipse.draw2d.feature.group lazy
     org.eclipse.emf.feature.group lazy
     org.eclipse.emf.mwe2.language.sdk.feature.group lazy
@@ -86,15 +86,16 @@ location releases "http://download.eclipse.org/releases/2021-12/" {
     org.eclipse.uml2.feature.group lazy
     org.eclipse.wst.common_core.feature.feature.group lazy
     org.eclipse.wst.xml_core.feature.feature.group lazy
-    org.eclipse.xpand.feature.group lazy
+//    org.eclipse.xpand.feature.group lazy
+//    org.eclipse.xpand.sdk.feature.group lazy
     org.eclipse.xsd.feature.group lazy
-    org.eclipse.xtend.feature.group lazy
-    org.eclipse.xtend.sdk.feature.group lazy
-    org.eclipse.xtext.runtime.feature.group lazy
-    org.eclipse.xtext.sdk.feature.group lazy
-    org.eclipse.xtext.ui.feature.group lazy
-    org.eclipse.xtext.xbase.feature.group lazy
-    org.eclipse.xtext.xbase.lib.feature.group lazy
+//    org.eclipse.xtend.feature.group lazy
+//    org.eclipse.xtend.sdk.feature.group lazy
+//    org.eclipse.xtext.runtime.feature.group lazy
+//    org.eclipse.xtext.sdk.feature.group lazy
+//    org.eclipse.xtext.ui.feature.group lazy
+//    org.eclipse.xtext.xbase.feature.group lazy
+//    org.eclipse.xtext.xbase.lib.feature.group lazy
     org.eclipse.xwt.feature.feature.group lazy
     org.eclipse.egit.feature.group lazy
 	org.eclipse.jgit.feature.group lazy
@@ -109,18 +110,32 @@ location releases "http://download.eclipse.org/releases/2021-12/" {
 	org.eclipse.gmf.runtime.sdk.feature.group lazy
 	org.eclipse.gmf.runtime.notation.sdk.feature.group lazy
 	org.eclipse.m2m.qvt.oml.sdk.feature.group lazy
-	org.eclipse.xpand.sdk.feature.group lazy
 	org.eclipse.emf.cdo.epp.feature.group lazy
 }
 
-location eclipse "https://download.eclipse.org/eclipse/updates/4.22/" {
+location xtend "https://download.eclipse.org/modeling/tmf/xtext/updates/composite/releases/" {
+    org.eclipse.xtend.feature.group lazy
+    org.eclipse.xtend.sdk.feature.group lazy
+    org.eclipse.xtext.runtime.feature.group lazy
+    org.eclipse.xtext.sdk.feature.group lazy
+    org.eclipse.xtext.ui.feature.group lazy
+    org.eclipse.xtext.xbase.feature.group lazy
+    org.eclipse.xtext.xbase.lib.feature.group lazy
+}
+
+location xpand "https://download.eclipse.org/modeling/m2t/xpand/updates/" {
+    org.eclipse.xpand.feature.group lazy
+	org.eclipse.xpand.sdk.feature.group lazy
+}
+
+location eclipse "https://download.eclipse.org/eclipse/updates/4.23/" {
 	org.eclipse.sdk.feature.group lazy
 	org.eclipse.e4.core.tools.feature.feature.group lazy
 	org.eclipse.rcp.configuration.feature.group lazy
 	org.eclipse.equinox.executable.feature.group lazy
 }
 
-location papyrus "https://download.eclipse.org/modeling/mdt/papyrus/updates/releases/2021-12/" {	
+location papyrus "https://download.eclipse.org/modeling/mdt/papyrus/updates/releases/2022-03/" {	
     org.eclipse.papyrus.sdk.feature.feature.group lazy
     org.eclipse.papyrus.views.properties.model.xwt lazy
     org.eclipse.papyrus.toolsmiths.feature.feature.group lazy

@@ -1008,29 +1008,6 @@ protected List<Map<String, Object>> buildInheritedEnumerationData(List<Classifie
 		}
 	}
 	
-	protected Collection<Classifier> filterClasses(Stereotype stereotype, Collection<Classifier> classes) {
-		Collection<Classifier> result = new ArrayList<>();
-		for (Classifier c: classes) {
-			if (stereotype == null || c.isStereotypeApplied(stereotype)) {
-				result.add(c);
-			}
-		}
-		
-		return result;
-	}
-
-	protected Collection<Classifier> getObjectsByType(Package pkg, EClass type) {
-		Collection<Classifier> classes = EcoreUtil.getObjectsByType(pkg.getPackagedElements(), type);
-		Collection<Classifier> result = new ArrayList<>();
-		for (Classifier c: classes) {
-			if (c.eClass() == type) {
-				result.add(c);
-			}
-		}
-		
-		return result;
-	}
-
 	protected Map<String, String> createEntityReference(Classifier c) {
 		Map<String, String> entityReference = new HashMap<>();
 		String qualifiedEntityName = getQualifiedName(c);

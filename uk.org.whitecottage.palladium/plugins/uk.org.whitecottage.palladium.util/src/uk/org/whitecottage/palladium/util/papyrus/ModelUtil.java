@@ -7,6 +7,7 @@ import java.util.List;
 
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.AssociationClass;
@@ -157,6 +158,17 @@ public class ModelUtil {
 		return result;
 	}
 
+	public static Collection<Classifier> getObjectsByType(Package pkg, EClass type) {
+		Collection<Classifier> classes = EcoreUtil.getObjectsByType(pkg.getPackagedElements(), type);
+		Collection<Classifier> result = new ArrayList<>();
+		for (Classifier c: classes) {
+			if (c.eClass() == type) {
+				result.add(c);
+			}
+		}
+		
+		return result;
+	}
 	public static String cardinality(MultiplicityElement element) {
 		String result = "";
 		if (element.upperBound() == -1) {
