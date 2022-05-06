@@ -52,11 +52,7 @@ public class ExportCollibra {
 		}
 		
 
-		try {
-			Activator.logInfo("Creating spreadsheet");
-			XSSFWorkbook workbook = new XSSFWorkbook();
-			Activator.logInfo("Created spreadsheet");
-			
+		try (XSSFWorkbook workbook = new XSSFWorkbook()) {
 			XSSFSheet subjectAreaModel = workbook.createSheet("Subject Area Model");
 			XSSFSheet dataCatalogue = workbook.createSheet("Data Catalogue");
 			XSSFSheet referenceDataCatalogue = workbook.createSheet("Reference Data");
