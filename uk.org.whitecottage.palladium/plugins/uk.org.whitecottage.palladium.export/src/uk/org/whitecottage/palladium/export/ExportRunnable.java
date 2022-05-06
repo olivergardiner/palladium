@@ -64,6 +64,7 @@ public class ExportRunnable implements IRunnableWithProgress {
 				case COLLIBRA:
 					Activator.logInfo("Exporting Collibra catalogue");
 					ExportCollibra collibra = new ExportCollibra(model, monitor);
+					Activator.logInfo("Created exporter");
 					collibra.export(dialog.getOutputFile());
 					break;
 				case EXCEL:

@@ -34,10 +34,11 @@
       <unit id="org.hamcrest.integration" version="0.0.0"/>
       <unit id="org.hamcrest.text" version="0.0.0"/>
       <unit id="org.objenesis" version="1.0.0.v201505121915"/>
-      <unit id="org.apache.poi.ooxml" version="4.1.1.v20200820-1148"/>
+      <unit id="org.slf4j.binding.simple" version="0.0.0"/>
+      <!--<unit id="org.apache.poi.ooxml" version="4.1.1.v20200820-1148"/>
       <unit id="org.apache.poi" version="4.1.1.v20200604-1524"/>
       <unit id="org.apache.poi.ooxml.schemas" version="4.1.1.v20200922-2105"/>
-      <unit id="org.apache.xmlbeans" version="0.0.0"/>
+      <unit id="org.apache.xmlbeans" version="0.0.0"/>-->
       <repository id="orbit" location="https://download.eclipse.org/tools/orbit/downloads/drops/R20220302172233/repository"/>
     </location>
     <location includeAllPlatforms="false" includeConfigurePhase="false" includeMode="planner" includeSource="true" type="InstallableUnit">
@@ -149,6 +150,26 @@
 				  <groupId>org.apache.jena</groupId>
 				  <artifactId>jena-core</artifactId>
 				  <version>4.4.0</version>
+				  <type>jar</type>
+			  </dependency>
+		  </dependencies>
+	  </location>
+	  <location includeDependencyDepth="infinite" includeDependencyScopes="compile" includeSource="true" missingManifest="generate" type="Maven">
+		  <dependencies>
+			  <dependency>
+				  <groupId>org.apache.poi</groupId>
+				  <artifactId>poi-ooxml</artifactId>
+				  <version>5.2.2</version>
+				  <type>jar</type>
+			  </dependency>
+		  </dependencies>
+	  </location>
+	  <location includeDependencyDepth="infinite" includeDependencyScopes="compile" includeSource="true" missingManifest="generate" type="Maven">
+		  <dependencies>
+			  <dependency>
+				  <groupId>org.apache.poi</groupId>
+				  <artifactId>poi-ooxml-full</artifactId>
+				  <version>5.2.2</version>
 				  <type>jar</type>
 			  </dependency>
 		  </dependencies>

@@ -9,6 +9,7 @@ import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.emf.ecore.xmi.XMLResource;
 import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.AssociationClass;
 import org.eclipse.uml2.uml.Class;
@@ -675,5 +676,11 @@ public class ModelUtil {
 		}
 		
 		return null;
+	}
+	
+	public static String getId(Element element) {
+		XMLResource resource = (XMLResource) element.eResource();
+		
+		return resource.getID(element);
 	}
 }

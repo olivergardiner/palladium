@@ -16,8 +16,8 @@
 	<description>Released artefacts for Palladium</description>
 
 	<properties>
-		<tycho-version>2.5.0</tycho-version>
-		<tychoExtrasVersion>2.5.0</tychoExtrasVersion>
+		<tycho-version>2.7.2</tycho-version>
+		<tychoExtrasVersion>2.7.2</tychoExtrasVersion>
 		
 		<java.source>1.8</java.source>
 		<java.target>1.8</java.target>

@@ -44,13 +44,18 @@ public class ExportCollibra {
 	}
 	
 	public void export(String output) {
+		Activator.logInfo("Exporting " + output);
 		File outputFile = new File(output);
 		
 		if (outputFile.exists()) {
 			outputFile.delete();
 		}
 		
-		try (XSSFWorkbook workbook = new XSSFWorkbook()) {
+
+		try {
+			Activator.logInfo("Creating spreadsheet");
+			XSSFWorkbook workbook = new XSSFWorkbook();
+			Activator.logInfo("Created spreadsheet");
 			
 			XSSFSheet subjectAreaModel = workbook.createSheet("Subject Area Model");
 			XSSFSheet dataCatalogue = workbook.createSheet("Data Catalogue");
@@ -69,11 +74,10 @@ public class ExportCollibra {
 			Activator.logInfo("Writing catalogue");
 			workbook.write(new FileOutputStream(outputFile));
 			
-			task.done();
-			
-		} catch (IOException e) {
+			task.done();			
+		} catch (Throwable e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			Activator.logError(e.toString(), e);
 		}
 		
 		if (monitor.isCanceled()) {
