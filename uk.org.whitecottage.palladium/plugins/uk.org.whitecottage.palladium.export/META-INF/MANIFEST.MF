@@ -18,11 +18,12 @@ Require-Bundle: org.eclipse.ui,
  wrapped.org.apache.poi.poi-ooxml-schemas;bundle-version="[4.1.2,6.0.0)",
  wrapped.org.apache.xmlbeans.xmlbeans;bundle-version="[3.1.0,6.0.0)",
  wrapped.com.zaxxer.SparseBitSet;bundle-version="[1.2.0,2.0.0)",
- wrapped.com.github.virtuald.curvesapi;bundle-version="[1.6.0,2.0.0)",
+ wrapped.com.github.virtuald.curvesapi;bundle-version="[1.06.0,2.0.0)",
  org.apache.commons.commons-collections4;bundle-version="[4.4.0,5.0.0)",
  org.apache.commons.commons-io;bundle-version="[2.11.0,3.0.0)",
  org.apache.commons.commons-codec;bundle-version="[1.15.0,2.0.0)",
- org.apache.commons.commons-compress;bundle-version="[1.21.0,2.0.0)"
+ org.apache.commons.commons-compress;bundle-version="[1.19.0,2.0.0)",
+ org.apache.commons.math3;bundle-version="[3.6.1,4.0.0)"
 Bundle-RequiredExecutionEnvironment: JavaSE-11
 Bundle-ActivationPolicy: lazy
 Automatic-Module-Name: uk.org.whitecottage.palladium.export

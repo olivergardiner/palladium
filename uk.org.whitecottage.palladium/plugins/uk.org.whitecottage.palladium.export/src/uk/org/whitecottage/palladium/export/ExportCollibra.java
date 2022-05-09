@@ -70,6 +70,7 @@ public class ExportCollibra {
 			Activator.logInfo("Writing catalogue");
 			workbook.write(new FileOutputStream(outputFile));
 			
+			Activator.logInfo("Catalogue written");
 			task.done();			
 		} catch (Throwable e) {
 			// TODO Auto-generated catch block
