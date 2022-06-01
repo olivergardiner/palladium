@@ -56,11 +56,6 @@
     <location includeAllPlatforms="false" includeConfigurePhase="false" includeMode="planner" includeSource="true" type="InstallableUnit">
       <unit id="org.eclipse.draw2d.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.emf.feature.group" version="0.0.0"/>
-      <unit id="org.eclipse.emf.mwe2.language.sdk.feature.group" version="0.0.0"/>
-      <unit id="org.eclipse.emf.mwe2.runtime.sdk.feature.group" version="0.0.0"/>
-      <unit id="org.eclipse.emf.mwe.core.feature.feature.group" version="0.0.0"/>
-      <unit id="org.eclipse.emf.mwe.sdk.feature.group" version="0.0.0"/>
-      <unit id="org.eclipse.emf.mwe.ui.feature.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.emf.validation.ocl.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.equinox.p2.discovery.feature.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.gmf.feature.group" version="0.0.0"/>
@@ -89,7 +84,6 @@
       <unit id="org.eclipse.gef.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.emf.query.sdk.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.emf.sdk.feature.group" version="0.0.0"/>
-      <unit id="org.eclipse.xtext.redist.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.wst.xml_ui.feature.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.gmf.runtime.sdk.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.gmf.runtime.notation.sdk.feature.group" version="0.0.0"/>
@@ -105,6 +99,12 @@
       <unit id="org.eclipse.xtext.ui.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.xtext.xbase.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.xtext.xbase.lib.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.xtext.redist.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.emf.mwe2.language.sdk.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.emf.mwe2.runtime.sdk.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.emf.mwe.core.feature.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.emf.mwe.sdk.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.emf.mwe.ui.feature.feature.group" version="0.0.0"/>
       <repository id="xtend" location="https://download.eclipse.org/modeling/tmf/xtext/updates/composite/releases/"/>
     </location>
     <location includeAllPlatforms="false" includeConfigurePhase="false" includeMode="planner" includeSource="true" type="InstallableUnit">
@@ -159,6 +159,26 @@
 			  <dependency>
 				  <groupId>org.apache.poi</groupId>
 				  <artifactId>poi-ooxml</artifactId>
+				  <version>4.1.2</version>
+				  <type>jar</type>
+			  </dependency>
+		  </dependencies>
+	  </location>
+	  <location includeDependencyDepth="infinite" includeDependencyScopes="compile" includeSource="true" missingManifest="generate" type="Maven">
+		  <dependencies>
+			  <dependency>
+				  <groupId>org.apache.poi</groupId>
+				  <artifactId>poi-ooxml-schemas</artifactId>
+				  <version>4.1.2</version>
+				  <type>jar</type>
+			  </dependency>
+		  </dependencies>
+	  </location>
+	  <!--<location includeDependencyDepth="infinite" includeDependencyScopes="compile" includeSource="true" missingManifest="generate" type="Maven">
+		  <dependencies>
+			  <dependency>
+				  <groupId>org.apache.poi</groupId>
+				  <artifactId>poi-ooxml</artifactId>
 				  <version>5.2.2</version>
 				  <type>jar</type>
 			  </dependency>
@@ -173,6 +193,6 @@
 				  <type>jar</type>
 			  </dependency>
 		  </dependencies>
-	  </location>
+	  </location>-->
   </locations>
 </target>

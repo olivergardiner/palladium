@@ -185,7 +185,7 @@
                </parameter>
             </command>
             <command
-                  commandId="uk.org.whitecottage.helper.command.editcardinality"
+                  commandId="uk.org.whitecottage.palladium.helper.command.editcardinality"
                   label="1..* to 1..*"
                   style="push">
                <visibleWhen
