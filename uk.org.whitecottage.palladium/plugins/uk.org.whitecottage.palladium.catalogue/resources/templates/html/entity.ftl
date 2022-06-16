@@ -57,10 +57,10 @@
 			</thead>
 			<tbody>
 			<#list attributes as attribute>
-				<tr>
+				<tr id="attr_${attribute.name}">
 					<td><code>${attribute.type}[${attribute.cardinality}]</code></td>
 					<td>${attribute.name}</td>
-					<td><#list attribute.comments as comment><p style="white-space: pre-line">${comment}</p></#list></td>
+					<td><#list attribute.comments as comment>${comment}</#list></td>
 				</tr>
 			</#list>
 			</tbody>

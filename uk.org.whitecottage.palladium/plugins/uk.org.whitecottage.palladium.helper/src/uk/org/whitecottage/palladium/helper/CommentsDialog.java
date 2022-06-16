@@ -9,6 +9,7 @@ import org.eclipse.jface.dialogs.TitleAreaDialog;
 import org.eclipse.jface.viewers.ListViewer;
 import org.eclipse.nebula.widgets.richtext.RichTextEditor;
 import org.eclipse.nebula.widgets.richtext.RichTextEditorConfiguration;
+import org.eclipse.papyrus.uml.tools.commands.ApplyStereotypeCommand;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.browser.ProgressEvent;
 import org.eclipse.swt.browser.ProgressListener;
@@ -27,14 +28,20 @@ import org.eclipse.swt.widgets.List;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.uml2.uml.Comment;
 import org.eclipse.uml2.uml.Element;
+import org.eclipse.uml2.uml.Profile;
+import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.UMLFactory;
 import org.eclipse.wb.swt.ResourceManager;
 
 import uk.org.whitecottage.palladium.util.emf.CommandUtil;
+import uk.org.whitecottage.palladium.util.profile.ProfileUtil;
+
+import org.eclipse.swt.layout.RowLayout;
 
 public class CommentsDialog extends TitleAreaDialog {
 	private RichTextEditor text;
 	private List list;
+	private Button btnCheckButton;
 	
 	protected java.util.List<WrappedComment> comments;
 	protected java.util.List<WrappedComment> deletedComments;
@@ -126,6 +133,7 @@ public class CommentsDialog extends TitleAreaDialog {
 				text.setText("");
 				
 				list.setSelection(currentComment);
+				btnCheckButton.setSelection(true);
 				
 				text.setFocus();
 			}
@@ -142,7 +150,9 @@ public class CommentsDialog extends TitleAreaDialog {
 				}
 				
 				if (currentComment >= 0) {
-					text.setText(comments.get(currentComment).getBody());
+					WrappedComment comment = comments.get(currentComment);
+					text.setText(comment.getBody());
+					btnCheckButton.setSelection(comment.isDocumentation());
 					list.setSelection(currentComment);
 				} else {
 					text.setText("");
@@ -246,10 +256,17 @@ public class CommentsDialog extends TitleAreaDialog {
 		     }
 		 });
 
-		initialiseList(list);
-
 		button_2.setEnabled(currentComment > 0);
 		button_3.setEnabled(currentComment < list.getItemCount() - 1);
+		
+		Composite composite_4 = new Composite(composite_1, SWT.NONE);
+		composite_4.setLayout(new RowLayout(SWT.HORIZONTAL));
+		
+		btnCheckButton = new Button(composite_4, SWT.CHECK);
+		btnCheckButton.setText("Is <<Documentation>>");
+		btnCheckButton.setSelection(true);
+
+		initialiseList(list);
 
 		return area;
 	}
@@ -289,11 +306,13 @@ public class CommentsDialog extends TitleAreaDialog {
 		
 		if (currentComment >= 0) {
 			list.setSelection(currentComment);
-			String commentText = comments.get(currentComment).getBody();
+			WrappedComment comment = comments.get(currentComment);
+			String commentText = comment.getBody();
 			if (commentText == null) {
 				commentText = "";
 			}
 			text.setText(commentText);
+			btnCheckButton.setSelection(comment.isDocumentation());
 		}
 	}
 	
@@ -321,11 +340,15 @@ public class CommentsDialog extends TitleAreaDialog {
 	
 	protected void saveComment() {
 		if (currentComment >= 0) {
-			comments.get(currentComment).setBody(text.getText());
+			WrappedComment comment = comments.get(currentComment);
+			comment.setBody(text.getText());
+			comment.setDocumentation(btnCheckButton.getSelection());
 			list.setItem(currentComment, text.getText());
 		} else if (!text.getText().isEmpty()) {
 			currentComment = 0;
-			comments.add(new WrappedComment(text.getText()));
+			WrappedComment comment = new WrappedComment(text.getText());
+			comment.setDocumentation(btnCheckButton.getSelection());
+			comments.add(comment);
 			list.add(text.getText());
 		}
 	}
@@ -356,10 +379,18 @@ public class CommentsDialog extends TitleAreaDialog {
 				comment.setComment(newComment);
 				Command newCommand = CommandUtil.buildCreateCommentCommand(element, newComment);
 				command.append(newCommand);
+				
+				if (comment.isDocumentation()) {
+					command.append(CommandUtil.buildDocumentationCommand(element, newComment, true));
+				}
 			} else {
-				if (comment.isChanged()) {
+				if (comment.isContentChanged()) {
 					Command newCommand = CommandUtil.buildUpdateCommentCommand(comment.getComment(), comment.getBody());
 					command.append(newCommand);
+				}
+				
+				if (comment.isStereotypeChanged()) {
+					command.append(CommandUtil.buildDocumentationCommand(element, comment.getComment(), comment.isDocumentation()));
 				}
 			}
 		}

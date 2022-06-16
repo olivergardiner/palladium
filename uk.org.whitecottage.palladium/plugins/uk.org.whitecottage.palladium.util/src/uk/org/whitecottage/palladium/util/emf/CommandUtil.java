@@ -20,13 +20,18 @@ import org.eclipse.papyrus.infra.core.utils.ServiceUtils;
 import org.eclipse.papyrus.infra.emf.gmf.command.GMFtoEMFCommandWrapper;
 import org.eclipse.papyrus.infra.services.edit.service.ElementEditServiceUtils;
 import org.eclipse.papyrus.infra.services.edit.service.IElementEditService;
+import org.eclipse.papyrus.uml.tools.commands.ApplyStereotypeCommand;
+import org.eclipse.papyrus.uml.tools.commands.UnapplyStereotypeCommand;
 import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.uml2.uml.Comment;
 import org.eclipse.uml2.uml.Element;
+import org.eclipse.uml2.uml.Profile;
+import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.UMLPackage;
 
 import uk.org.whitecottage.palladium.util.Activator;
+import uk.org.whitecottage.palladium.util.profile.ProfileUtil;
 
 public class CommandUtil {
 	
@@ -82,7 +87,7 @@ public class CommandUtil {
 		return GMFtoEMFCommandWrapper.wrap(deleteCommand.reduce());
 	}
 
-	protected static TransactionalEditingDomain getDomain() {
+	public static TransactionalEditingDomain getDomain() {
 		TransactionalEditingDomain editingDomain = null;
 		
 		IEditorPart editor = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().getActiveEditor();
@@ -107,5 +112,16 @@ public class CommandUtil {
 	
 	public static Command buildMoveCommentCommand(Element element, Comment comment, int index) {
 		return MoveCommand.create(getDomain(), element, UMLPackage.eINSTANCE.getElement_OwnedComment(), comment, index);
+	}
+	
+	public static Command buildDocumentationCommand(Element element, Comment comment, boolean isDocumentation) {
+		Profile profile = ProfileUtil.getProfile(element.getModel());
+		Stereotype documentationStereotype = profile.getOwnedStereotype("Documentation");
+		
+		if (isDocumentation) {		
+			return new ApplyStereotypeCommand(comment, documentationStereotype, getDomain());
+		} else {
+			return new UnapplyStereotypeCommand(comment, documentationStereotype, getDomain());
+		}
 	}
 }

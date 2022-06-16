@@ -56,11 +56,6 @@
     <location includeAllPlatforms="false" includeConfigurePhase="false" includeMode="planner" includeSource="true" type="InstallableUnit">
       <unit id="org.eclipse.draw2d.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.emf.feature.group" version="0.0.0"/>
-      <unit id="org.eclipse.emf.mwe2.language.sdk.feature.group" version="0.0.0"/>
-      <unit id="org.eclipse.emf.mwe2.runtime.sdk.feature.group" version="0.0.0"/>
-      <unit id="org.eclipse.emf.mwe.core.feature.feature.group" version="0.0.0"/>
-      <unit id="org.eclipse.emf.mwe.sdk.feature.group" version="0.0.0"/>
-      <unit id="org.eclipse.emf.mwe.ui.feature.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.emf.validation.ocl.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.equinox.p2.discovery.feature.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.gmf.feature.group" version="0.0.0"/>
@@ -89,13 +84,12 @@
       <unit id="org.eclipse.gef.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.emf.query.sdk.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.emf.sdk.feature.group" version="0.0.0"/>
-      <unit id="org.eclipse.xtext.redist.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.wst.xml_ui.feature.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.gmf.runtime.sdk.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.gmf.runtime.notation.sdk.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.m2m.qvt.oml.sdk.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.emf.cdo.epp.feature.group" version="0.0.0"/>
-      <repository id="releases" location="https://download.eclipse.org/releases/2022-03/"/>
+      <repository id="releases" location="https://download.eclipse.org/releases/2022-06/"/>
     </location>
     <location includeAllPlatforms="false" includeConfigurePhase="false" includeMode="planner" includeSource="true" type="InstallableUnit">
       <unit id="org.eclipse.xtend.feature.group" version="0.0.0"/>
@@ -105,6 +99,12 @@
       <unit id="org.eclipse.xtext.ui.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.xtext.xbase.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.xtext.xbase.lib.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.xtext.redist.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.emf.mwe2.language.sdk.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.emf.mwe2.runtime.sdk.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.emf.mwe.core.feature.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.emf.mwe.sdk.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.emf.mwe.ui.feature.feature.group" version="0.0.0"/>
       <repository id="xtend" location="https://download.eclipse.org/modeling/tmf/xtext/updates/composite/releases/"/>
     </location>
     <location includeAllPlatforms="false" includeConfigurePhase="false" includeMode="planner" includeSource="true" type="InstallableUnit">
@@ -117,13 +117,13 @@
       <unit id="org.eclipse.e4.core.tools.feature.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.rcp.configuration.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.equinox.executable.feature.group" version="0.0.0"/>
-      <repository id="eclipse" location="https://download.eclipse.org/eclipse/updates/4.23/"/>
+      <repository id="eclipse" location="https://download.eclipse.org/eclipse/updates/4.24/"/>
     </location>
     <location includeAllPlatforms="false" includeConfigurePhase="false" includeMode="planner" includeSource="true" type="InstallableUnit">
       <unit id="org.eclipse.papyrus.sdk.feature.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.papyrus.views.properties.model.xwt" version="0.0.0"/>
       <unit id="org.eclipse.papyrus.toolsmiths.feature.feature.group" version="0.0.0"/>
-      <repository id="papyrus" location="https://download.eclipse.org/modeling/mdt/papyrus/updates/releases/2022-03/"/>
+      <repository id="papyrus" location="https://download.eclipse.org/modeling/mdt/papyrus/updates/releases/2022-06/"/>
     </location>
     <location includeAllPlatforms="false" includeConfigurePhase="false" includeMode="planner" includeSource="true" type="InstallableUnit">
       <unit id="org.eclipse.mylyn.ide_feature.feature.group" version="0.0.0"/>
