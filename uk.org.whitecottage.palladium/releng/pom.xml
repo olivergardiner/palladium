@@ -36,18 +36,6 @@
 				<!-- <module>uk.org.whitecottage.palladium.p2</module> -->
 				<module>rcp</module>
 			</modules>
-			<repositories>
-				<repository>
-					<id>papyrus</id>
-					<layout>p2</layout>
-					<url>https://download.eclipse.org/modeling/mdt/papyrus/updates/releases/2022-06/</url>
-				</repository>
-				<!-- <repository>
-					<id>papyrus-compare</id>
-					<layout>p2</layout>
-					<url>https://download.eclipse.org/modeling/mdt/papyrus/components/compare/updates/nightly/latest</url>
-				</repository> -->
-			</repositories>
 		</profile>
 		<profile>
 			<id>site</id>
@@ -60,18 +48,6 @@
 				<module>../features</module>
 				<module>uk.org.whitecottage.palladium.p2</module>
 			</modules>
-			<repositories>
-				<repository>
-					<id>papyrus</id>
-					<layout>p2</layout>
-					<url>https://download.eclipse.org/modeling/mdt/papyrus/updates/releases/2022-06/</url>
-				</repository>
-				<!-- <repository>
-					<id>papyrus-compare</id>
-					<layout>p2</layout>
-					<url>https://download.eclipse.org/modeling/mdt/papyrus/components/compare/updates/integration</url>
-				</repository> -->
-			</repositories>
 		</profile>
 	</profiles>
 
@@ -88,41 +64,35 @@
 	<repositories>
 		<repository>
 			<id>license-feature</id>
-			<url>http://download.eclipse.org/cbi/updates/license/</url>
+			<url>https://download.eclipse.org/cbi/updates/license/</url>
 			<layout>p2</layout>
-		</repository>
-		<repository>
-			<id>emf-compare</id>
-			<layout>p2</layout>
-			<url>https://download.eclipse.org/modeling/emf/compare/updates/releases/latest/</url>
 		</repository>
 		<repository>
 			<id>eclipse-releases</id>
 			<layout>p2</layout>
-			<url>https://download.eclipse.org/releases/2022-06/</url>
+			<url>https://download.eclipse.org/releases/2022-09/</url>
 		</repository>
 		<repository>
 			<id>eclipse</id>
 			<layout>p2</layout>
-			<url>http://download.eclipse.org/eclipse/updates/4.24/</url>
+			<url>https://download.eclipse.org/eclipse/updates/4.25/</url>
+		</repository>
+		<repository>
+			<id>papyrus</id>
+			<layout>p2</layout>
+			<url>https://download.eclipse.org/modeling/mdt/papyrus/updates/releases/2022-06/</url>
 		</repository>
 		<!-- XWT fix -->
-		<!--<repository>
+		<repository>
 			<id>xwt</id>
 			<layout>p2</layout>
 			<url>https://download.eclipse.org/xwt/milestones-1.7.0/1.7.0-S/</url>
-		</repository> -->
+		</repository>
 		<repository>
 			<id>nebula</id>
 			<layout>p2</layout>
 			<url>https://download.eclipse.org/nebula/releases/latest/</url>
 		</repository>
-		<!-- Local Orbit only required for Fremarker -->
-		<!-- <repository>
-			<id>local-orbit</id>
-			<layout>p2</layout>
-			<url>file:/${local.orbit}</url>
-		</repository> -->
 		<repository>
 			<id>orbit</id>
 			<layout>p2</layout>
