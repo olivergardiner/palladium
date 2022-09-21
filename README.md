@@ -5,6 +5,6 @@ Palladium is an Eclipse plugin project that provides tools for working with logi
 
 Build instructions:
 
-`cd uk.org.whitecottage.palladium`
-
-`mvn clean verify -P rcp`
+> cd uk.org.whitecottage.palladium
+> 
+> mvn clean verify -P rcp
