@@ -49,7 +49,7 @@
       <import feature="org.eclipse.emf.validation.sdk"/>
       <import feature="org.eclipse.emf.compare.source"/>
       <import feature="org.eclipse.emf.compare.ide.ui.source"/>
-      <import feature="org.eclipse.emf.cdo.epp"/>
+      <!--<import feature="org.eclipse.emf.cdo.epp"/>-->
       <import feature="org.eclipse.gmf.runtime.sdk"/>
       <import feature="org.eclipse.egit"/>
       <import feature="org.eclipse.egit.import"/>

@@ -23,6 +23,13 @@
 		<java.target>1.8</java.target>
 	</properties>
 	
+	
+	<modules>
+		<module>uk.org.whitecottage.palladium.target</module>
+		<module>../plugins</module>
+		<module>../features</module>
+	</modules>
+
 	<profiles>
 		<profile>
 			<id>rcp</id>
@@ -30,9 +37,6 @@
 				<activeByDefault>false</activeByDefault>
 			</activation>
 			<modules>
-				<module>uk.org.whitecottage.palladium.target</module>
-				<module>../plugins</module>
-				<module>../features</module>
 				<!-- <module>uk.org.whitecottage.palladium.p2</module> -->
 				<module>rcp</module>
 			</modules>
@@ -43,9 +47,6 @@
 				<activeByDefault>false</activeByDefault>
 			</activation>
 			<modules>
-				<module>uk.org.whitecottage.palladium.target</module>
-				<module>../plugins</module>
-				<module>../features</module>
 				<module>uk.org.whitecottage.palladium.p2</module>
 			</modules>
 		</profile>
@@ -70,17 +71,17 @@
 		<repository>
 			<id>eclipse-releases</id>
 			<layout>p2</layout>
-			<url>https://download.eclipse.org/releases/2022-09/</url>
+			<url>https://download.eclipse.org/releases/2022-12/</url>
 		</repository>
 		<repository>
 			<id>eclipse</id>
 			<layout>p2</layout>
-			<url>https://download.eclipse.org/eclipse/updates/4.25/</url>
+			<url>https://download.eclipse.org/eclipse/updates/4.26/</url>
 		</repository>
 		<repository>
 			<id>papyrus</id>
 			<layout>p2</layout>
-			<url>https://download.eclipse.org/modeling/mdt/papyrus/updates/releases/2022-06/</url>
+			<url>https://download.eclipse.org/modeling/mdt/papyrus/updates/releases/2022-12/</url>
 		</repository>
 		<!-- XWT fix -->
 		<repository>
@@ -97,6 +98,7 @@
 			<id>orbit</id>
 			<layout>p2</layout>
 			<url>https://download.eclipse.org/tools/orbit/downloads/drops/R20220302172233/repository</url>
+			<!--<url>https://download.eclipse.org/tools/orbit/downloads/drops/R20221123021534/repository</url>-->
 		</repository>
 	</repositories>
 
