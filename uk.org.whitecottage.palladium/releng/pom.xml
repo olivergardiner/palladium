@@ -97,8 +97,8 @@
 		<repository>
 			<id>orbit</id>
 			<layout>p2</layout>
-			<url>https://download.eclipse.org/tools/orbit/downloads/drops/R20220302172233/repository</url>
-			<!--<url>https://download.eclipse.org/tools/orbit/downloads/drops/R20221123021534/repository</url>-->
+			<!--<url>https://download.eclipse.org/tools/orbit/downloads/drops/R20220302172233/repository</url>-->
+			<url>https://download.eclipse.org/tools/orbit/downloads/drops/R20221123021534/repository</url>
 		</repository>
 	</repositories>
 
