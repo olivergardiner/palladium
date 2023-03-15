@@ -1051,7 +1051,7 @@ protected List<Map<String, Object>> buildInheritedEnumerationData(List<Classifie
 		}
 
 		String original = commentBody;
-		String pattern = "\\$\\{(\\w*)=(.*)\\}";
+		String pattern = "\\$\\{(\\w*)=(.*?)\\}";
 		Pattern tagPattern = Pattern.compile(pattern);
 		Matcher matcher = tagPattern.matcher(commentBody);
 		while (matcher.find()) {			
@@ -1087,7 +1087,7 @@ protected List<Map<String, Object>> buildInheritedEnumerationData(List<Classifie
 						} else {
 							embed = "<br/><div style=\"margin: auto; width: " + scale + ";\" class=\"diagram-div\"><embed type=\"image/svg+xml\" class=\"diagram col-12\" src=\"" + dPath + filename + ".svg\"></div><br/>";
 						}
-						commentBody = matcher.replaceAll(embed);
+						commentBody = matcher.replaceFirst(embed);
 						break;
 					case "content":
 						String[] contentParts = sanitiseFileName(value).split("@");
@@ -1097,7 +1097,7 @@ protected List<Map<String, Object>> buildInheritedEnumerationData(List<Classifie
 							contentScale = contentParts[1];
 						}
 						String contentEmbed = "<br/><div style=\"margin: auto; width: " + contentScale + ";\"><embed style=\"width: 100%;\" src=\"" + "_content/" + contentFilename + "\"/></div><br/>";
-						commentBody = matcher.replaceAll(contentEmbed);
+						commentBody = matcher.replaceFirst(contentEmbed);
 						break;
 					case "link":
 						NamedElement element = findElement(comment, value);
@@ -1122,7 +1122,7 @@ protected List<Map<String, Object>> buildInheritedEnumerationData(List<Classifie
 								elementPath += "/L_" + elementName + ".html"; 
 							}
 							
-							linkEmbed = "<span class=\"pointer\" onclick=\"\\$('#main').load('" + elementPath + "');\">" + elementName + "</span>";
+							linkEmbed = "<span class=\"pointer\" onclick=\"\\$('#main').load('" + elementPath + "');window.scrollTo(0,0);\">" + elementName + "</span>";
 						} else {
 							problems.add(new Problem("Invalid link target", Problem.Severity.WARNING, ownerPath));
 						}

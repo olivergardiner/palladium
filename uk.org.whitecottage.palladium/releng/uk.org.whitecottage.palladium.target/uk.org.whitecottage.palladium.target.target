@@ -61,7 +61,7 @@
       <unit id="org.eclipse.emf.mwe.core.feature.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.emf.mwe.sdk.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.emf.mwe.ui.feature.feature.group" version="0.0.0"/>
-      <repository id="releases" location="https://download.eclipse.org/releases/2022-12/"/>
+      <repository id="releases" location="https://download.eclipse.org/releases/2023-03/"/>
     </location>
     <location includeAllPlatforms="false" includeConfigurePhase="false" includeMode="planner" includeSource="true" type="InstallableUnit">
       <unit id="com.google.guava" version="0.0.0"/>
@@ -96,8 +96,7 @@
       <unit id="org.apache.poi" version="4.1.1.v20200604-1524"/>
       <unit id="org.apache.poi.ooxml.schemas" version="4.1.1.v20200922-2105"/>
       <unit id="org.apache.xmlbeans" version="0.0.0"/>-->
-      <!--<repository id="orbit" location="https://download.eclipse.org/tools/orbit/downloads/drops/R20220302172233/repository"/>-->
-      <repository id="orbit" location="https://download.eclipse.org/tools/orbit/downloads/drops/R20221123021534/repository"/>
+      <repository id="orbit" location="https://download.eclipse.org/tools/orbit/downloads/drops/R20230302014618/repository/"/>
     </location>
     <location includeAllPlatforms="false" includeConfigurePhase="false" includeMode="planner" includeSource="true" type="InstallableUnit">
       <unit id="org.eclipse.nebula.widgets.richtext.feature.feature.group" version="0.0.0"/>
@@ -106,15 +105,15 @@
     </location>
     <location includeAllPlatforms="false" includeConfigurePhase="false" includeMode="planner" includeSource="true" type="InstallableUnit">
       <unit id="org.eclipse.rcp.configuration.feature.group" version="0.0.0"/>
-      <repository id="eclipse" location="https://download.eclipse.org/eclipse/updates/4.26/"/>
+      <repository id="eclipse" location="https://download.eclipse.org/eclipse/updates/4.27/"/>
     </location>
     <location includeAllPlatforms="false" includeConfigurePhase="false" includeMode="planner" includeSource="true" type="InstallableUnit">
       <unit id="org.eclipse.papyrus.toolsmiths.feature.feature.group" version="0.0.0"/>
-      <repository id="papyrus" location="https://download.eclipse.org/modeling/mdt/papyrus/updates/releases/2022-12/"/>
+      <repository id="papyrus" location="https://download.eclipse.org/modeling/mdt/papyrus/updates/releases/2023-03/"/>
     </location>
     <location includeAllPlatforms="false" includeConfigurePhase="false" includeMode="planner" includeSource="true" type="InstallableUnit">
       <unit id="org.eclipse.xwt.feature.feature.group" version="0.0.0"/>
-      <repository id="xwt" location="https://download.eclipse.org/xwt/milestones-1.7.0/1.7.0-S/"/>
+      <repository id="xwt" location="https://download.eclipse.org/xwt/milestones-1.8.0/1.8.0-RC2/"/>
     </location>
     <location includeAllPlatforms="false" includeConfigurePhase="false" includeMode="planner" includeSource="true" type="InstallableUnit">
       <unit id="org.eclipse.xtend.feature.group" version="0.0.0"/>

@@ -636,8 +636,10 @@ public class ModelUtil {
 				}
 			}
 		} else if ((name.size() - index) == 1) {
+			String elementName = name.get(index);
 			for (Object o: EcoreUtil.getObjectsByType(pkg.getPackagedElements(), UMLPackage.Literals.NAMED_ELEMENT)) {
-				if (((NamedElement) o).getName().equals(name.get(index))) {
+				String foundElementName = ((NamedElement) o).getName();
+				if (foundElementName != null && foundElementName.equals(elementName)) {
 					return (NamedElement) o;
 				}
 			}
