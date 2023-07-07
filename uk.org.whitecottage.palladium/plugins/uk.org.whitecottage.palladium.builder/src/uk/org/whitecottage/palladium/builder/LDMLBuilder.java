@@ -129,13 +129,15 @@ public class LDMLBuilder extends IncrementalProjectBuilder {
 			Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap().put(UMLResource.FILE_EXTENSION, UMLResource.Factory.INSTANCE);
 
 			Resource res = set.getResource(URI.createFileURI(resource.getLocation().toString()), true);
-			Model model = (Model) EcoreUtil.getObjectByType(res.getContents(), UMLPackage.Literals.MODEL);
+			Package model = (Package) EcoreUtil.getObjectByType(res.getContents(), UMLPackage.Literals.PACKAGE);
 			
-			validate(file, model);
+			if (model != null) {
+				validate(file, model);
+			}
 		}
 	}
 	
-	protected void validate(IFile file, Model model) {
+	protected void validate(IFile file, Package model) {
 		validateInstanceSpecifications(file, model);
 	}
 	
