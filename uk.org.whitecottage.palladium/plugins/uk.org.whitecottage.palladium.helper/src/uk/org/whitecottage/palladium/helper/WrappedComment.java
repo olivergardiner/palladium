@@ -31,7 +31,7 @@ public class WrappedComment {
 		body = comment.getBody();
 		isNewComment = false;
 
-		Profile profile = ProfileUtil.getProfile(comment.getModel());
+		Profile profile = ProfileUtil.getProfile(comment.getNearestPackage());
 		Stereotype documentationStereotype = profile.getOwnedStereotype("Documentation");
 		isDocumentation = comment.isStereotypeApplied(documentationStereotype);
 		wasDocumentation = isDocumentation;
