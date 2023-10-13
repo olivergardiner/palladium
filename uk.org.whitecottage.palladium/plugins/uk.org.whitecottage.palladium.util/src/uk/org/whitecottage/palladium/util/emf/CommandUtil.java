@@ -115,7 +115,7 @@ public class CommandUtil {
 	}
 	
 	public static Command buildDocumentationCommand(Element element, Comment comment, boolean isDocumentation) {
-		Profile profile = ProfileUtil.getProfile(element.getModel());
+		Profile profile = ProfileUtil.getProfile(element.getNearestPackage());
 		Stereotype documentationStereotype = profile.getOwnedStereotype("Documentation");
 		
 		if (isDocumentation) {		

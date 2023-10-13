@@ -10,7 +10,7 @@ public class ProfileUtil {
 	}
 	
 	public static Profile getProfile(Package pkg) {
-		Profile profile = pkg.getAppliedProfile("ldml");
+		Profile profile = null;
 
 		EList<Profile> appliedProfiles = pkg.getAllAppliedProfiles();
 		for (Profile p: appliedProfiles) {
