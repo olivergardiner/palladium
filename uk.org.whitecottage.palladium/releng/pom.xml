@@ -16,8 +16,8 @@
 	<description>Released artefacts for Palladium</description>
 
 	<properties>
-		<tycho-version>2.7.2</tycho-version>
-		<tychoExtrasVersion>2.7.2</tychoExtrasVersion>
+		<tycho-version>4.0.4</tycho-version>
+		<tychoExtrasVersion>4.0.4</tychoExtrasVersion>
 		
 		<java.source>1.8</java.source>
 		<java.target>1.8</java.target>
@@ -172,11 +172,11 @@
 					<artifactId>tycho-source-plugin</artifactId>
 					<version>${tycho-version}</version>
 				</plugin>
-				<plugin>
+				<!--<plugin>
 					<groupId>org.eclipse.tycho.extras</groupId>
 					<artifactId>tycho-source-feature-plugin</artifactId>
 					<version>${tychoExtrasVersion}</version>
-				</plugin>
+				</plugin>-->
 				<plugin>
 					<groupId>org.eclipse.tycho</groupId>
 					<artifactId>tycho-p2-plugin</artifactId>
@@ -202,7 +202,7 @@
 					<artifactId>target-platform-configuration</artifactId>
 					<version>${tycho-version}</version>
 				</plugin>
-				<plugin>
+				<!--<plugin>
 					<groupId>org.eclipse.tycho.extras</groupId>
 					<artifactId>tycho-pack200a-plugin</artifactId>
 					<version>${tychoExtrasVersion}</version>
@@ -211,7 +211,7 @@
 					<groupId>org.eclipse.tycho.extras</groupId>
 					<artifactId>tycho-pack200b-plugin</artifactId>
 					<version>${tychoExtrasVersion}</version>
-				</plugin>
+				</plugin>-->
 			</plugins>
 		</pluginManagement>
 		
@@ -219,9 +219,9 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-clean-plugin</artifactId>
-				<configuration>
+				<!--<configuration>
 					<encoding>UTF-8</encoding>
-				</configuration>
+				</configuration>-->
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -259,10 +259,20 @@
 						<goals>
 							<goal>plugin-source</goal>
 						</goals>
+						<configuration>
+							<excludes>
+								<plugin id="uk.org.whitecottage.palladium.rcp" />
+								<plugin id="uk.org.whitecottage.palladium.help" />
+								<plugin id="org.apache.batik.pdf" />
+								<plugin id="org.eclipse.wst.common.project.facet.core" />
+								<plugin id="org.eclipse.emf.compare.rcp" />
+								<plugin id="org.eclipse.emf.compare.rcp.ui" />
+							</excludes>
+						</configuration>
 					</execution>
 				</executions>
 			</plugin>
-			<plugin>
+			<!--<plugin>
 				<groupId>org.eclipse.tycho.extras</groupId>
 				<artifactId>tycho-source-feature-plugin</artifactId>
 				<executions>
@@ -284,7 +294,7 @@
 						</configuration>
 					</execution>
 				</executions>
-			</plugin>
+			</plugin>-->
 			<plugin>
 				<groupId>org.eclipse.tycho</groupId>
 				<artifactId>tycho-p2-plugin</artifactId>
@@ -344,7 +354,7 @@
 				<groupId>org.eclipse.tycho</groupId>
 				<artifactId>target-platform-configuration</artifactId>
 				<configuration>
-					<includePackedArtifacts>true</includePackedArtifacts>
+					<!--<includePackedArtifacts>true</includePackedArtifacts>-->
 					<targetDefinitionIncludeSource>honor</targetDefinitionIncludeSource>
 				    <!-- <filters>
 					    <filter>
@@ -387,14 +397,14 @@
 					</target>
 				</configuration>
 			</plugin>
-			<plugin>
+			<!--<plugin>
 				<groupId>org.eclipse.tycho.extras</groupId>
 				<artifactId>tycho-pack200a-plugin</artifactId>
 			</plugin>
 			<plugin>
 				<groupId>org.eclipse.tycho.extras</groupId>
 				<artifactId>tycho-pack200b-plugin</artifactId>
-			</plugin>
+			</plugin>-->
 		</plugins>		
 	</build>
 </project>
