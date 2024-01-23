@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <?pde?>
-<target name="Palladium RCP" sequenceNumber="1647519647">
+<target includeMode="feature" name="Palladium RCP" sequenceNumber="1647519647">
   <locations>
     <location includeAllPlatforms="false" includeConfigurePhase="false" includeMode="planner" includeSource="true" type="InstallableUnit">
       <unit id="org.eclipse.sdk.feature.group" version="0.0.0"/>
@@ -23,10 +23,6 @@
       <repository id="releases" location="https://download.eclipse.org/releases/2023-12/"/>
     </location>
     <location includeAllPlatforms="false" includeConfigurePhase="false" includeMode="planner" includeSource="true" type="InstallableUnit">
-      <unit id="org.eclipse.rcp.configuration.feature.group" version="0.0.0"/>
-      <repository id="eclipse" location="https://download.eclipse.org/eclipse/updates/4.30/"/>
-    </location>
-    <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.eclipse.uml2.sdk.feature.group" version="0.0.0"/>
       <repository id="uml" location="https://download.eclipse.org/modeling/mdt/uml2/updates/5.5"/>
     </location>
@@ -58,9 +54,10 @@
       <unit id="com.fasterxml.jackson.core.jackson-annotations" version="0.0.0"/>
       <unit id="com.fasterxml.jackson.core.jackson-core" version="0.0.0"/>
       <unit id="com.fasterxml.jackson.core.jackson-databind" version="0.0.0"/>
+      <unit id="org.apache.felix.scr" version="0.0.0"/>
       <repository id="orbit" location="https://download.eclipse.org/tools/orbit/simrel/orbit-aggregation/2023-12"/>
     </location>
-    <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
+    <location includeAllPlatforms="false" includeConfigurePhase="false" includeMode="planner" includeSource="true" type="InstallableUnit">
       <unit id="javax.annotation" version="0.0.0"/>
       <repository id="orbit2" location="https://download.eclipse.org/tools/orbit/downloads/drops/R20230531010532/repository/"/>
     </location>
