@@ -20,17 +20,21 @@
       <unit id="org.eclipse.jgit.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.jgit.http.apache.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.ocl.uml.feature.group" version="0.0.0"/>
-      <repository id="releases" location="https://download.eclipse.org/releases/2023-12/"/>
+      <repository id="releases" location="https://download.eclipse.org/releases/2024-06/"/>
     </location>
     <location includeAllPlatforms="false" includeConfigurePhase="false" includeMode="planner" includeSource="true" type="InstallableUnit">
       <unit id="org.eclipse.uml2.sdk.feature.group" version="0.0.0"/>
       <repository id="uml" location="https://download.eclipse.org/modeling/mdt/uml2/updates/5.5"/>
     </location>
     <location includeAllPlatforms="false" includeConfigurePhase="false" includeMode="planner" includeSource="true" type="InstallableUnit">
+      <unit id="org.eclipse.emf.query.sdk.feature.group" version="0.0.0"/>
+      <repository id="emf-query" location="https://download.eclipse.org/modeling/emf/query/updates/releases/"/>
+    </location>
+    <location includeAllPlatforms="false" includeConfigurePhase="false" includeMode="planner" includeSource="true" type="InstallableUnit">
       <unit id="org.eclipse.papyrus.toolsmiths.feature.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.papyrus.sdk.feature.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.papyrus.views.properties.model.xwt" version="0.0.0"/>
-      <repository id="papyrus" location="https://download.eclipse.org/modeling/mdt/papyrus/updates/releases/2023-12/"/>
+      <repository id="papyrus" location="https://download.eclipse.org/modeling/mdt/papyrus/updates/releases/2024-06/"/>
     </location>
     <location includeAllPlatforms="false" includeConfigurePhase="false" includeMode="planner" includeSource="true" type="InstallableUnit">
       <unit id="org.eclipse.xwt.feature.feature.group" version="0.0.0"/>
@@ -55,7 +59,7 @@
       <unit id="com.fasterxml.jackson.core.jackson-core" version="0.0.0"/>
       <unit id="com.fasterxml.jackson.core.jackson-databind" version="0.0.0"/>
       <unit id="org.apache.felix.scr" version="0.0.0"/>
-      <repository id="orbit" location="https://download.eclipse.org/tools/orbit/simrel/orbit-aggregation/2023-12"/>
+      <repository id="orbit" location="https://download.eclipse.org/tools/orbit/simrel/orbit-aggregation/2024-06"/>
     </location>
     <location includeAllPlatforms="false" includeConfigurePhase="false" includeMode="planner" includeSource="true" type="InstallableUnit">
       <unit id="javax.annotation" version="0.0.0"/>

@@ -226,17 +226,17 @@ Class[isAbstract=true] {
 	fontColor: darkGrey;
 }
 
-Class[appliedStereotypes~="pldm.profile::ReferenceData"] {
-	fillColor: #C3A7AD;
-}
-
 Class[appliedStereotypes~="ldml::ReferenceData"] {
 	fillColor: #C3A7AD;
 }
 
-/*Class[appliedStereotypes~="pldm.profile::ReferenceData"] > [isAbstract=true] {
-	fillColor: #83A7CD;
-}*/
+Class[appliedStereotypes~="ldml::MasterData"] {
+	fillColor: #C3C71D;
+}
+
+Class[appliedStereotypes~="ldml::TransactionData"] {
+	fillColor: #13C71D;
+}
 
 AssociationClass {
 	routing: "Rectilinear";
@@ -254,10 +254,6 @@ AssociationClass > Compartment[kind="operations"] {
 
 AssociationClass > Compartment[kind="nestedclassifiers"]{
 	visible:false;
-}
-
-AssociationClass[appliedStereotypes~="pldm.profile::ReferenceData"] {
-	fillColor: #C3A7AD;
 }
 
 AssociationClass[appliedStereotypes~="ldml::ReferenceData"] {
